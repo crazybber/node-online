@@ -14,6 +14,9 @@ var fs   = require('fs'),
 	zlib = require('zlib'),
 	http = require('http');
 	
+	
+var action =require('./Protocal/actiondef');
+	
 var MIME = {
 /* 	'.css': 'text/css',
     '.js': 'application/javascript',
@@ -21,61 +24,53 @@ var MIME = {
 */
 	'.json':'application/json'
 }
-//main function mergefile and
-function validateFiles(pathnames,callback){
-	console.log('validateFiles, start....');
-	console.log('pathnames.length:%s',pathnames.length);
-	//var output =[];	
-	(function next(i,len){
-		console.log('i:%d,len:%d',i,len);
-		if(i<len){	
-			fs.stat(pathnames[i],function(err,filename){
-				if(err){
-					console.log(' dealing file:%s,error happended',pathnames[i]);
-					console.log(' i will go callback');
-					callback(err);
-				}else if(!filename.isFile()){						
-						callback(new Error());
-				}else{
-					console.log(' checking file:%s',pathnames[i]);
-					//output.push(data);
-					//console.log(' dealing next file:%s',pathnames[i+1]);
-					next(i+1,len);
-				}
-			} );
-		} else {
-			console.log('i will go to callback,dealing files');
-			//console.log('%s',output);
-			callback(null,pathnames);
-		}	
-	}(0,pathnames.length));
-}
 
 
-function uzipurldata(buffer){
-	var data;
-	zlib.unzip(buffer, function(err, buffer) {
+// main function parse url get the json object;
+function getProtocalObject(httpurl,callback){
+	var protocalobj;
+	console.log('url：%s ,length: %d',httpurl,httpurl.length);		
+	prostr = httpurl.replace('/','');
+	console.log('prostr: %s ,length: %d',prostr,prostr.length);	
+
+	var buffer = new Buffer(prostr, 'base64');
+	
+    zlib.unzip(buffer, function(err, outbuffer) {
 	if (!err) { 
-	data = buffer;
-    console.log('unzip:content'+buffer.toString());
+		console.log('unzip:content'+outbuffer.toString());
+		 var jsonPro_obj=JSON.parse(outbuffer.toString());
+			console.log(jsonPro_obj);
+		 callback(err, jsonPro_obj);
+	}else{
+		 console.log('unzip:content error');
 	}
 });
-return data;
+//	console.log('base %s',base);	
+//	var tmp = url.parse(httpurl);
+//	console.log(tmp);	
+//  console.log('pathnames before map:%s',pathnames);
 }
 
 
-// main function parse url
-function parseProtocal(httpurl){
-	var base,pathnames,parts;	
-	console.log('url：%s',httpurl);	
-	base = httpurl.replace('/','');
-	console.log('base %s',base);	
-	var tmp = url.parse(httpurl);
-	console.log(	tmp);	
-	//console.log('pathnames before map:%s',pathnames);
-
+//2、根据协议解析结果，进行下一步的逻辑处理。比如注册，登陆，页面跳转，刷新数据。
+//parse 
+function DispatchAction(action_keylist,json_obj){
+	var conditon  = action_keylist[0];
+	console.log('i will dispatch msg by ',conditon);
+	switch(conditon)
+	{
+	case action.reg:
+	  console.log('new user, register trasition will go.. ',conditon);
+	  break;
+	case action.login:
+	  
+	  break;
+	default:
+	 
+	}
+		
+		
 }
-
 
 	
 function main(argv){
@@ -84,14 +79,26 @@ function main(argv){
 	port = config.port||80;
 	console.log('starting launch Server on Port :%d',port);
 	var server=http.createServer(function(request,response){	
-		//Step 1  
+		//1、对数据进行解析，分析请求的行为类型。
 		//parser client protocol content
 		console.log('parsing client request,start....');
-		var urlinfo = parseProtocal(request.url);
-		console.log('parsing client request, over');
-		// console.log('url:%s',urlinfo);
-		//validateFiles
 		
+		getProtocalObject(request.url,function(err, json_obj){
+			var keylist =[];
+			for(key in json_obj){
+				keylist.push(key);
+			}				
+		console.log(keylist[0],keylist.length);	
+		
+		DispatchAction(keylist,json_obj);
+			
+		
+		} );	
+		
+		//2、根据协议解析结果，进行下一步的逻辑处理。比如注册，登陆，页面跳转，刷新数据。
+		//console.log('parsing client request, over');
+		// console.log('url:%s',urlinfo);
+		//validateFiles	
 /* 		validateFiles(urlinfo.pathnames,function(err,pathnames){
 			console.log('callback here,by validateFiles');
 			if(err){

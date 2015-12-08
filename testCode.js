@@ -14,6 +14,17 @@ var jsonobj= JSON.parse(fs.readFileSync('Define_Format\\DataStructure.json','utf
 
 console.log(jsonobj);
 
+console.log('----------------');
+
+for(key in jsonobj){
+	console.log(key);
+}
+console.log(jsonobj);
+console.log('----------------');
+var action =require('./Protocal/actiondef');
+
+console.log(action.reg);
+
 
 var urlstr = JSON.stringify(jsonobj);
 
@@ -64,5 +75,5 @@ zlib.deflate(urlstr,function(err,data){
 });
  */
 
-
+ 
 
