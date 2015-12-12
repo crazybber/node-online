@@ -21,7 +21,7 @@ for(key in jsonobj){
 }
 console.log(jsonobj);
 console.log('----------------');
-var action =require('./Protocal/actiondef');
+var action =require('./Docs/actiondef');
 
 console.log(action.reg);
 

@@ -13,9 +13,8 @@ var fs   = require('fs'),
 	url  = require('url'),
 	zlib = require('zlib'),
 	http = require('http');
-	
-	
-var action =require('./Protocal/actiondef');
+
+var action =require('./actiondef');
 	
 var MIME = {
 /* 	'.css': 'text/css',
