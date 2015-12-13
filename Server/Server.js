@@ -8,7 +8,6 @@ var app = express();
 var cors= require('cors');
 var fs = require('fs');
 var  bodyParser = require('body-parser');
-
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

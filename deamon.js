@@ -16,7 +16,7 @@ function spawn(server,config){
 
 
 function main(argv){	
-	spawn('./Server/Server.doc',argv[0]);
+	spawn('./bin/www',argv[0]);
 	process.on('SIGTERM',function(){
 		worker.kill();
 		process.exit(0);

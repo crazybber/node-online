@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="eamon" ng-controller="AppCtrl as app">
+<ul>
+    <li ng-repeat="product in app.products">
+        {{product.name}}
+    </li>
+</ul>
+<input type="text" ng-model="app.newProduct" />
+<button ng-click="app.saveProduct(app.newProduct)">Save Product</button>
+
+<script src="../node_modules/angular/angular.js" ></script>
+<script src="index.js"></script>
+</body>
+</html>
