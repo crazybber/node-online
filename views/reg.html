@@ -1,10 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+	<meta charset="UTF-8">
+	<title>Title</title>
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
 </head>
-<body>
+<body ng-app="eamon" ng-controller="regCtrl as userinfo">
 
+    <p>在输入框中注册用户名信息：</p>
+        username: <input type="text" ng-model="username"/><br>
+        mobile:<input type="text" ng-model="mobile"/><br>
+        password:<input type="text" ng-model="password" /><br>
+        email:<input type="text" ng-model="email" />
+    </p>
+    当前: {{username+" "+ password+" "+ mobile}}<br/>
+
+    <!--<p>当前:<label ng-bind="username"/> <label ng-bind="mobile"/></p>-->
+<button ng-click="subRegister()">Sub Register Info</button>
+
+    <p>当前系统的注册用户列表：</p>
+    <table>
+        <tr ng-repeat="user in userlist">
+        <td>{{user.username}}</td>
+        <td>{{user.mobile}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.password}}</td>
+        </tr>
+    </table>
+
+
+<script src="../node_modules/angular/angular.js" ></script>
+<script src="reg.js"></script>
 </body>
 </html>

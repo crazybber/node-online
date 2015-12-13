@@ -4,10 +4,10 @@
  */
 
 
-var index= angular.module("eamon",[]);
+var app= angular.module("eamon",[]);
 
 
-index.controller("AppCtrl", function ($http) {
+app.controller("indexCtrl", function ($http) {
 
     var app =this;
     var  url="http://localhost:3000";
@@ -27,4 +27,4 @@ index.controller("AppCtrl", function ($http) {
     }
     loadProducts();
 
-})
+});

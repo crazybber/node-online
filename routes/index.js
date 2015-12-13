@@ -3,12 +3,12 @@
  */
 var express = require('express');
 var router = express.Router();
-var Product = require('../db/Product');
+var product = require('../db/product');
 
 
 router.get('/', function (req, res) {
 
-    Product.find(function (err, prodcts) {
+    product.find(function (err, prodcts) {
        // res.send('../public/index.html');
         res.send(prodcts);
     });

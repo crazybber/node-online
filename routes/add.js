@@ -6,11 +6,11 @@
 
 var express = require('express');
 var router = express.Router();
-var Product = require('../db/Product');
+var product = require('../db/product');
 
     router.post('/', function (req, res) {
     var product_name = req.body.name;
-    var product_to_add = new Product({name:product_name,result:true,method:null});
+    var product_to_add = new product({name:product_name,result:true,method:null});
     product_to_add.save(function (err) {
         res.send();
     });

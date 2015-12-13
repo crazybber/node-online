@@ -3,9 +3,8 @@
  *  DB ODM Design
  */
 
-var mongoose= require('mongoose');
+var mongoose= require('./db_conn');
 
-mongoose.connect('mongodb://localhost/TestDB');
 
 var schema = mongoose.Schema({
     name: String,
@@ -13,6 +12,7 @@ var schema = mongoose.Schema({
     Method:Object
 });
 
-var Product=  mongoose.model('Product',schema);
+var product=  mongoose.model('product',schema);
 
-module.exports = Product;
+
+module.exports = product;
