@@ -10,7 +10,7 @@ var trans = JSON.stringify(data);
 console.log('out: %s',trans);
 
 
-var jsonobj= JSON.parse(fs.readFileSync('Define_Format\\DataStructure.json','utf-8'));
+var jsonobj= JSON.parse(fs.readFileSync('Define_Format\\DataStructure.doc','utf-8'));
 
 console.log(jsonobj);
 
