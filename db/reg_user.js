@@ -20,9 +20,10 @@ var schema = mongoose.Schema({
     mobile:Number,
     email:String,
     password:String,
-    reg_time_cli:String,
-    reg_time_srv:String,
-    reg_type:String
+    reg_type:String,
+    reg_tm_cli:String,
+    reg_tm_srv:String,
+    token:String
 });
 
 var reg_user=  mongoose.model('users',schema);

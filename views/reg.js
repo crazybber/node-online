@@ -20,10 +20,12 @@ app.controller("regCtrl", function ($scope,$http) {
             username:$scope.username,
             mobile:$scope.mobile,
             email:$scope.email,
-            password:$scope.password
+            password:$scope.password,
+            reg_type:'1',    //1,android ,2,ios,3,windows,4 pc
+            reg_tm_cli: new Date().toString(),
         }};
 
-        $http.post(url+"/reg",registerInfo).success(function (reg_return) {
+        $http.post(url+"/users/reg",registerInfo).success(function (reg_return) {
 
             var result = reg_return.reg_result;
             if(result.result === true){
@@ -34,7 +36,7 @@ app.controller("regCtrl", function ($scope,$http) {
     }
 
     function loaduserList() {
-        $http.get(url+"/reg").success(function (userlist) {
+        $http.get(url+"/users/query").success(function (userlist) {
             $scope.userlist = userlist;
         });
     }

@@ -20,19 +20,22 @@
 var express = require('express');
 var router = express.Router();
 var reg_user = require('../db/reg_user');
+var uuid = require('node-uuid');
 
 
 /* add new  users. */
-router.post('/', function(req, res) {
+router.post('/reg', function(req, res) {
 
   var userinfo = req.body.reg;
+
+  userinfo.reg_tm_srv= new Date().toString();
+  userinfo.token = uuid.v1();
 
   //var json_obj ={
   //          username:userinfo.username,
   //          mobile:userinfo.mobile,
   //          email:userinfo.email,
   //          password:userinfo.password};
-
   var user_to_add = new reg_user(userinfo);
 
 
@@ -45,13 +48,19 @@ router.post('/', function(req, res) {
           username:userinfo.username,
           mobile:userinfo.mobile,
           email:userinfo.email,
-          token:'6c84fb90-12c4-11e1-840d-7b25c5ee775a',
+          token:userinfo.token,
+          reg_time:userinfo.reg_tm_cli,
+          login_time:userinfo.reg_tm_cli,
           result:true
         }
+
 
       };
 
       res.send(reg_result);
+    }
+    else {
+     console.log(err);
     }
 
   });
@@ -61,7 +70,7 @@ router.post('/', function(req, res) {
 
 
 /* get userlist. */
-router.get('/', function(req, res) {
+router.get('/query', function(req, res) {
   reg_user.find(function (err, userlist) {
     // res.send('../public/index.html');
     if(!err){
