@@ -5,19 +5,23 @@
     <title>Socket.IO Chat Client </title>
    <link rel="stylesheet" href="../../public/stylesheets/chatstyle.css">
 </head>
-<body ng-app="app_message" ng-controller="messageSeverControl">
-<ul class="pages" ng-switch="show_page">
+<body ng-app="app_message"  ng-controller="messageControl">
+<ul class="pages" ng-switch="show_page" >
     <li class="chat page" ng-switch-when="chat">
         <div class="chatArea">
-            <ul class="messages"></ul>
+            <ul class="messages">
+                <li ng-repeat="msg_to_show in msglist">
+                    {{msg_to_show.toString()}}
+                </li>
+            </ul>
         </div>
-        <input class="inputMessage" placeholder="Type here..."/>
+        <input class="inputMessage" placeholder="Type here..." ng-model="msg_to_send" ng-keypress="onSend($event,msg_to_send)"  />
     </li>
     <li class="login page" ng-switch-when="login">
         <div class="form">
             <h1 class="title" ng-bind="username"/>
             <h3 class="title">What's your nickname?</h3>
-            <input class="usernameInput" type="text" placeholder="input your name..." maxlength="14" ng-model="username" ng-keypress="onEnter($event)" />
+            <input class="usernameInput" type="text" placeholder="input your name..." maxlength="14" ng-model="username" ng-keypress="onEnter($event,username)" />
         </div>
     </li>
 
@@ -26,6 +30,7 @@
 
 
 <script src="../../bower_components/angular/angular.min.js" ></script>
+<script src="../../bower_components/socket.io-client/socket.io.js" ></script>
 <script src="message.js"></script>
 
 </body>

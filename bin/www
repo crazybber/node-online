@@ -36,11 +36,11 @@ server.on('listening', onListening);
  * Create message Center service.
  */
 var io_server= require('socket.io');
-var io= new io_server(server);
+var servercenter= new io_server(server);
 
 // store messages
 var messages = [];
-io.on('connection', function (socket) {
+servercenter.on('connection', function (socket) {
 
   socket.emit('news', { hello: 'world' });
 
@@ -57,6 +57,11 @@ io.on('connection', function (socket) {
   messages.forEach(function(msg) {
     socket.send(msg);
   })
+
+
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
+  });
 
 });
 
