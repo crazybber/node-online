@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$" libraries="{ServerDemo_nodejs node_modules}" />
     <file url="file://$PROJECT_DIR$/Docs/Server_Code/ServerCode" libraries="{express-DefinitelyTyped, mongoose-DefinitelyTyped, node-DefinitelyTyped}" />
     <file url="file://$PROJECT_DIR$/routes/users.js" libraries="{angularjs-DefinitelyTyped, mongodb-DefinitelyTyped}" />
     <file url="file://$PROJECT_DIR$/views/index.js" libraries="{angularjs-DefinitelyTyped}" />
+    <file url="file://$PROJECT_DIR$/views/message/message.js" libraries="{angularjs-DefinitelyTyped}" />
     <file url="file://$PROJECT_DIR$/views/reg.html" libraries="{angular2-DefinitelyTyped, angularjs-DefinitelyTyped}" />
     <file url="file://$PROJECT_DIR$/views/reg.js" libraries="{angularjs-DefinitelyTyped}" />
-    <file url="PROJECT" libraries="{express-DefinitelyTyped, express-debug-DefinitelyTyped, mongoose-DefinitelyTyped, node-DefinitelyTyped}" />
+    <file url="PROJECT" libraries="{express-DefinitelyTyped, express-debug-DefinitelyTyped, mongoose-DefinitelyTyped, node-DefinitelyTyped, socket.io-DefinitelyTyped, socket.io.users-DefinitelyTyped}" />
   </component>
 </project>

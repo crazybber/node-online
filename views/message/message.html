@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Socket.IO Chat Client </title>
+   <link rel="stylesheet" href="../../public/stylesheets/chatstyle.css">
+</head>
+<body ng-app="app_message" ng-controller="messageSeverControl">
+<ul class="pages" ng-switch="show_page">
+    <li class="chat page" ng-switch-when="chat">
+        <div class="chatArea">
+            <ul class="messages"></ul>
+        </div>
+        <input class="inputMessage" placeholder="Type here..."/>
+    </li>
+    <li class="login page" ng-switch-when="login">
+        <div class="form">
+            <h1 class="title" ng-bind="username"/>
+            <h3 class="title">What's your nickname?</h3>
+            <input class="usernameInput" type="text" placeholder="input your name..." maxlength="14" ng-model="username" ng-keypress="onEnter($event)" />
+        </div>
+    </li>
+
+</ul>
+
+
+
+<script src="../../bower_components/angular/angular.min.js" ></script>
+<script src="message.js"></script>
+
+</body>
+</html>
