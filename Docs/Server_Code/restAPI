@@ -1,0 +1,26 @@
+1、用户 user action
+http://127.0.0.1:3000/users/reg
+
+/users/reg
+/users/login
+/users/update
+/users/query
+/users/reset_pass
+/users/logout
+
+1、app首页
+//app default page content push
+//
+/default/index
+
+2、消息中心
+//message center default page
+
+/message/index
+
+
+3、服务中心
+//micro service module center
+/servicecenter/index
+
+
