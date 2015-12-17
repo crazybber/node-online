@@ -20,13 +20,38 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, 'public')));
 
-var routes = require('./routes/index');
-var add = require('./routes/add');
-var users = require('./routes/users');
+var routes = require('./routes/index'); // this is test route module ,will be removed in release version
 
-app.use('/', routes);
-app.use('/add', add);
+
+var add = require('./routes/users/add'); // this is test route module ,will be removed in release version
+
+var webpages = require('./routes/web');
+var users = require('./routes/users/users');
+
+var welcome = require('./routes/welcome');
+var defaultpage = require('./routes/default');
+var servicecenter = require('./routes/servicecenter');
+var discover = require('./routes/discover');
+var message = require('./routes/message');
+var profile = require('./routes/profile');
+
+
+app.use('/', routes); ////this is test modules
+app.use('/add', add); //this is test modules
+
 app.use('/users', users);
+app.use('/webpages', webpages); //redirect logic to the register modules.
+
+//main logic modules.
+app.use('/welcome',welcome);
+app.use('/default',defaultpage);
+app.use('/servicecenter',servicecenter);
+app.use('/discover',discover);
+app.use('/message',servicecenter);
+app.use('/profile',profile);
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -47,7 +72,6 @@ if (app.get('env') === 'development') {
     });
   });
 }
-
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {

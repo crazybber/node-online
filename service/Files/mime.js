@@ -4,14 +4,15 @@
  * @ date        2015/12/17
  * 当请求静态服务器文件的类型 html, css, gif, jpg, png, javascript, json, plain text, 我们会在此文件进行映射
  */
-var mime = {
+var MIME = {
   //查找文件后缀类型
   lookupExtension : function(ext, fallback) {
-    return mime.TYPES[ext.toLowerCase()] || fallback || 'text/plain';
+    return this.TYPES[ext.toLowerCase()] || fallback || 'text/plain';
   },
 
   //文件类型
-  TYPES : { ".3gp"   : "video/3gpp"
+  TYPES : {
+    ".3gp"     : "video/3gpp"
     , ".a"     : "application/octet-stream"
     , ".ai"    : "application/postscript"
     , ".aif"   : "audio/x-aiff"
@@ -179,4 +180,4 @@ var mime = {
   }
 };
 
-exports.mime=mime;
+exports.MIME=MIME;

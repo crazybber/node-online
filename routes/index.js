@@ -1,9 +1,12 @@
 /**
  * Created by Administrator on 2015/12/13.
+ * this is test page 这是测试页面
  */
 var express = require('express');
 var router = express.Router();
 var product = require('../db/product');
+
+
 
 
 router.get('/', function (req, res) {

@@ -19,7 +19,7 @@
 
 var express = require('express');
 var router = express.Router();
-var reg_user = require('../db/reg_user');
+var reg_user = require('../../db/reg_user');
 var uuid = require('node-uuid');
 
 
@@ -66,7 +66,6 @@ router.post('/reg', function(req, res) {
   });
 
 });
-
 
 
 /* get userlist. */
