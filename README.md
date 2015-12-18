@@ -1,5 +1,12 @@
 # ServerDemo_nodejs
 
+项目运行：
+确保安装Node.js 确保安装MongoDB.
+1、从云端git到Project。
+2、在Project终端（terminal）命令行中运行：NMP install
+3、增加一个Node.js类型的启动configuration，将javascript file指向：bin\www
+
+
 目前主要的后端模块：
 NodeJS：基于V8擎的服务端运行时环境。
 express：网络请求和路由。
