@@ -9,18 +9,27 @@ http://127.0.0.1:3000/users/reg
 /users/logout
 
 1、push//app default page content
-
-//
 /default/index
+/default/actives/get
+
 
 2、消息中心
 //message center default page
 
 /message/index
-
+/message/notice/push
+/message/notice/get
+/message/get
 
 3、服务中心
 //micro service module center
 /servicecenter/index
+/servicecenter/catlog/subcatlog/name/download
+/servicecenter/catlog/subcatlog/get
+/servicecenter/catlog/get/
 
-
+4、新发现
+/discover/news/get
+/discover/news/push
+/discover/actives/push
+/discover/actives/get
