@@ -20,7 +20,6 @@ http://127.0.0.1:3000/users/reg
                 {"image":"image_location",
                  "description":"description",
                  "url":"url_when_click_to_jump_to"}],
-
     }
 }
 
