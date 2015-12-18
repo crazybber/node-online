@@ -35,3 +35,14 @@ service是放具体的业务类型处理逻辑，目前里面只有messagecenter
 
 view里面就是放了一些h5的页面和页面用的js文件。
 
+-----------------------------------
+如何把mongodb 安装成服务：
+命令行：
+mongod --config "C:\Program Files\MongoDB\Server\3.2\bin\mongodb.cfg" --install
+配置文件：mongod.cfg
+内容如下：
+systemLog:
+    destination: file
+    path: E:\MongoDB\3.2\Data\log\mongod.log
+storage:
+    dbPath: E:\MongoDB\3.2\Data\db
