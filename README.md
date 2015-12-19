@@ -46,3 +46,7 @@ systemLog:
     path: E:\MongoDB\3.2\Data\log\mongod.log
 storage:
     dbPath: E:\MongoDB\3.2\Data\db
+    
+删除 MongoDB 服务
+
+sc delete mongodb

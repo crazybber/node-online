@@ -4,8 +4,7 @@
  */
 var express = require('express');
 var router = express.Router();
-var product = require('../db/product');
-
+var product = require('../../db/product');
 
 
 router.post('/', function (req, res) {

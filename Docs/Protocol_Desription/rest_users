@@ -5,7 +5,7 @@ http://127.0.0.1:3000/users/reg
 {
 "reg":{
 	"user":"username",
-	"mobile":15088551600,
+	"mobile":"15088551600",
 	"mail":"sally@eamon.com",
 	"password":"password",
 	 "reg_type":"1",    //1,android ,2,ios,3,windows,4 pc
@@ -16,7 +16,7 @@ http://127.0.0.1:3000/users/reg
 服务端返回的成功数据
 {
 "reg_result":{
-        "result":true
+        "result":"true",
 	    "user":"username",
     	"mobile":15088551600,
     	"mail":"sally@eamon.com",

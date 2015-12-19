@@ -8,6 +8,8 @@ http://127.0.0.1:3000/users/reg
 /users/reset_pass
 /users/logout
 
+
+
 1、push//app default page content
 /default/index
 /default/actives/get
@@ -33,3 +35,8 @@ http://127.0.0.1:3000/users/reg
 /discover/news/push
 /discover/actives/push
 /discover/actives/get
+
+5、welocome adv欢迎广告
+
+/welocome/index
+
