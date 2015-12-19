@@ -9,6 +9,7 @@ var product = require('../../db/product');
 
 router.post('/', function (req, res) {
 
+    var requestinfo = req.body.request_push;
 
 
 });

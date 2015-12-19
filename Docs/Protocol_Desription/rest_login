@@ -1,28 +1,30 @@
- //1、注册
+ //1、登陆
 
-http://127.0.0.1:3000/users/reg
-使用post方式，客户端提交的注册对象数据结构
+http://127.0.0.1:3000/users/login
+使用post方式，客户端提交的登陆对象数据结构
 {
-"reg":{
+"request_login":{
 	"user":"username",
 	"mobile":"15088551600",
 	"mail":"sally@eamon.com",
 	"password":"password",
-	 "reg_type":"1",    //1,android ,2,ios,3,windows,4 pc
-	 "reg_tm_cli":"注册时间"
+	"channel":"10001"  //10001 官方渠道，10002//xx商城
+	"reg_type":"1",    //1,android ,2,ios,3,windows,4 pc
+	"login_time_cli":"登陆时间"
     }
 }
 
 服务端返回的成功数据
 {
-"reg_result":{
+"request_result":{
         "result":"true",
 	    "user":"username",
     	"mobile":15088551600,
     	"mail":"sally@eamon.com",
     	"reg_type":"1",    //1,android ,2,ios,3,windows,4 pc
-    	"reg_time":"注册时间",
-    	"login_time":"登陆时间",
+        "login_time":"登陆时间",
+        "ser_time":"服务器返回时间",
+        "online_status":"fine",
 	    "token":"6c84fb90-12c4-11e1-840d-7b25c5ee775a" //var uuid = require('node-uuid');
 	},
 }

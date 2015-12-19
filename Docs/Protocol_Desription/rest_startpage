@@ -1,0 +1,38 @@
+ //starpage.
+
+http://127.0.0.1:3000/starpage/
+
+{
+    "request_push":{
+        "country":"country",
+        "state":"country",
+        "city":"city",
+        "gender":"gender",
+        "channel":"10001"  //10001 官方渠道，10002//xx商城
+        "model":{
+        "brand":"Hawei Mate 7",
+        "resolution":"1024x768",
+        "device_type":"1",    //1,android ,2,ios,3,windows,4 pc
+        }
+    }
+}
+
+
+{
+    "request_result":{
+        "result":"true",
+        "imageList":[{"image":"url",
+                     "name":"name",
+                     "cacheid":"guid",
+                     "data":"imagedata",
+                     "description":"description",
+                      "url":"url_when_click_to_jump_to"},
+                     {"image":"url",
+                      "name":"name",
+                      "cacheid":"guid",
+                      "data":"imagedata",
+                      "description":"description",
+                      "url":"url_when_click_to_jump_to"},]
+    }
+}
+
