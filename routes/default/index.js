@@ -9,7 +9,7 @@ var router = express.Router();
 
 
 //recommend advertisement.
-router.get('/', function (req, res) {
+router.post('/', function (req, res) {
 
 
 });

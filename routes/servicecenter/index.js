@@ -4,12 +4,11 @@
  */
 var express = require('express');
 var router = express.Router();
-var product = require('../../db/product');
 
 
 
 
-router.get('/', function (req, res) {
+router.post('/', function (req, res) {
 
 
 });
