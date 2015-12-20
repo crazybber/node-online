@@ -4,7 +4,8 @@ http://127.0.0.1:3000/default/index
 //广告
 {
     "request_default":{
-        "modules":"1", // 1为广告推荐，2为最近使用的内容。
+        "session":"0002",
+        "domain":"/root/default/ad",  // 1为广告推荐，2为最近使用的内容。
         "model":{
         "brand":"Hawei Mate 7",
         "resolution":"1024x768",
@@ -16,7 +17,8 @@ http://127.0.0.1:3000/default/index
 {
     "request_result":{
         "result":"true",
-        "modules":"1", // 1为广告推荐，2为最近使用的内容。
+        "session":"0002",
+        "domain":"/root/default/ad",  // 1为广告推荐，2为最近使用的内容。
         "content":[{"image":"url",
                      "name":"name",
                      "cacheid":"guid",

@@ -4,6 +4,8 @@ http://127.0.0.1:3000/users/reg
 使用post方式，客户端提交的注册对象数据结构
 {
 "request_reg":{
+    "session":"0001",
+    "domain":"/root/users/reg",  // 1为广告推荐，2为最近使用的内容。
 	"user":"username",
 	"mobile":"15088551600",
 	"mail":"sally@eamon.com",
@@ -20,6 +22,8 @@ http://127.0.0.1:3000/users/reg
 {
 "request_result":{
         "result":"true",
+        "session":"0001",
+        "domain":"/root/users/reg",  // 1为广告推荐，2为最近使用的内容。
 	    "user":"username",
     	"mobile":"15088551600",
     	"mail":"sally@eamon.com",
