@@ -31,5 +31,9 @@ servicecenter/catlogs/download/filename
                        "action":"action",
                        "description":"description",
                        "url":"url_when_click_to_jump_to"}
-                     ]
+                     ],
+    "erorCode":"0", //需要定义
+    "errorMsg":"no error",
+    "addtionInfo":"for future"
+
 }

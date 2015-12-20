@@ -28,7 +28,10 @@ http://127.0.0.1:3000/default/index
                       "cacheid":"guid",
                       "data":"imagedata",
                       "description":"description",
-                      "url":"url_when_click_to_jump_to"},]
+                      "url":"url_when_click_to_jump_to"},],
+        "erorCode":"0", //需要定义
+        "errorMsg":"no error",
+        "addtionInfo":"for future"
     }
 }
 
@@ -62,6 +65,9 @@ http://127.0.0.1:3000/default/index
                       "cacheid":"guid",
                       "data":"imagedata",
                       "description":"description",
-                      "url":"url_when_click_to_jump_to"},]
+                      "url":"url_when_click_to_jump_to"},],
+        "erorCode":"0", //需要定义
+        "errorMsg":"no error",
+        "addtionInfo":"for future using"
     }
 }

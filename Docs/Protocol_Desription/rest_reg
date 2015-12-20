@@ -8,10 +8,11 @@ http://127.0.0.1:3000/users/reg
 	"mobile":"15088551600",
 	"mail":"sally@eamon.com",
 	"password":"password", //密码使用MD5加密
-	 "channel":"10001"  //10001 官方渠道，10002//xx商城
+	"channel":"10001"  //10001 官方渠道，10002//xx商城
 	"reg_os_type":"1",    //1,android ,2,ios,3,windows,4 pc
 	"reg_way":"1",        //1,使用邮箱和用户名，2，使用手机号码注册
-	"reg_tm_cli":"注册时间" 系统获取
+	"reg_tm_cli":"注册时间", 系统获取
+	"addtionInfo":"for future"
     }
 }
 
@@ -27,6 +28,9 @@ http://127.0.0.1:3000/users/reg
     	"ser_time":"服务器返回时间",
     	"online_status":"fine",
 	    "token":"6c84fb90-12c4-11e1-840d-7b25c5ee775a" //var uuid = require('node-uuid');
+	    "erorCode":"0", //需要定义
+        "errorMsg":"no error",
+        "addtionInfo":"for future"
 	},
 }
 

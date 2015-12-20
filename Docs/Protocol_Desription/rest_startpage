@@ -13,6 +13,7 @@ http://127.0.0.1:3000/starpage/
         "brand":"Hawei Mate 7",
         "resolution":"1024x768",
         "device_type":"1",    //1,android ,2,ios,3,windows,4 pc
+        "addtionInfo":"for future"
         }
     }
 }
@@ -32,7 +33,10 @@ http://127.0.0.1:3000/starpage/
                       "cacheid":"guid",
                       "data":"imagedata",
                       "description":"description",
-                      "url":"url_when_click_to_jump_to"},]
+                      "url":"url_when_click_to_jump_to"},],
+        "erorCode":"0", //需要定义
+        "errorMsg":"no error",
+        "addtionInfo":"for future"
     }
 }
 
