@@ -1,6 +1,7 @@
 /**
  * Created by Administrator on 2015/12/20.
  * parser Data 解析数据-->正确解析则校验数据--->校验正确转入注册队列--->注册。
+ * 该类暂时无用
  */
 
 var express = require('express');

@@ -7,7 +7,7 @@ var app= angular.module("eamon",[]);
 
 app.controller("regCtrl", function ($scope,$http) {
 
-    var  url="http://localhost:3000";
+    var  url="http://127.0.0.1:3000";
     $scope.username ="sally";
     $scope.mobile =15088551660;
     $scope.password ="123456";

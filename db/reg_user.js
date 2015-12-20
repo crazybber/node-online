@@ -24,7 +24,7 @@ var schema = mongoose.Schema({
     reg_type:String,
     reg_tm_cli:String,
     reg_tm_srv:String,
-    token:String,
+    token:String
 });
 
 var reg_user=  mongoose.model('users',schema);

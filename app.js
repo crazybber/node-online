@@ -21,12 +21,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //app.use(express.static(path.join(__dirname, 'public')));
 
 var routes = require('./routes/index'); // this is test route module ,will be removed in release version
-
-
 var add = require('./routes/users/add'); // this is test route module ,will be removed in release version
-
 //var webpages = require('./routes/web');
 var users = require('./routes/users/users');
+
+var utils = require('./routes/utils');
 
 //var welcome = require('./routes/welcome');
 //var defaultpage = require('./routes/default');
@@ -38,8 +37,9 @@ var users = require('./routes/users/users');
 
 app.use('/', routes); ////this is test modules
 app.use('/add', add); //this is test modules
-
 app.use('/users', users);
+app.use('/upload', utils);
+
 //app.use('/webpages', webpages); //redirect logic to the register modules.
 
 //main logic modules.

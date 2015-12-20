@@ -5,7 +5,6 @@ http://127.0.0.1:3000/users/reg
 {
 "request_reg":{
     "session":"0001",
-    "domain":"/root/users/reg",  // 1为广告推荐，2为最近使用的内容。
 	"user":"username",
 	"mobile":"15088551600",
 	"mail":"sally@eamon.com",
@@ -14,7 +13,7 @@ http://127.0.0.1:3000/users/reg
 	"reg_os_type":"1",    //1,android ,2,ios,3,windows,4 pc
 	"reg_way":"1",        //1,使用邮箱和用户名，2，使用手机号码注册
 	"reg_tm_cli":"注册时间", 系统获取
-	"addtionInfo":"for future"
+	"extend":"for future"
     }
 }
 
@@ -23,7 +22,6 @@ http://127.0.0.1:3000/users/reg
 "request_result":{
         "result":"true",
         "session":"0001",
-        "domain":"/root/users/reg",  // 1为广告推荐，2为最近使用的内容。
 	    "user":"username",
     	"mobile":"15088551600",
     	"mail":"sally@eamon.com",
@@ -34,7 +32,7 @@ http://127.0.0.1:3000/users/reg
 	    "token":"6c84fb90-12c4-11e1-840d-7b25c5ee775a" //var uuid = require('node-uuid');
 	    "erorCode":"0", //需要定义
         "errorMsg":"no error",
-        "addtionInfo":"for future"
+        "extend":"for future"
 	},
 }
 
