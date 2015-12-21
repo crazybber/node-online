@@ -7,8 +7,8 @@
 <body ng-app="eamon" ng-controller="uploadCtrl">
 
 
-<form  novalidate name="uploadForm" ng-submit="submit()">
-    <input type="file" name="thumbnail" ng-model="file_fullpath" required>
+<form action="/upload/file" ng-submit="gosubmit()">
+    <input type="file" ng-model="file_fullpath">
     <input type="submit" value="upload">
 </form>
 

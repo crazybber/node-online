@@ -20,12 +20,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, 'public')));
 
+var utils = require('./routes/utils');
 var routes = require('./routes/index'); // this is test route module ,will be removed in release version
 var add = require('./routes/users/add'); // this is test route module ,will be removed in release version
 //var webpages = require('./routes/web');
 var users = require('./routes/users/users');
 
-var utils = require('./routes/utils');
+
 
 //var welcome = require('./routes/welcome');
 //var defaultpage = require('./routes/default');
@@ -35,7 +36,7 @@ var utils = require('./routes/utils');
 //var profile = require('./routes/profile');
 
 
-app.use('/', routes); ////this is test modules
+//app.use('/', routes); ////this is test modules
 app.use('/add', add); //this is test modules
 app.use('/users', users);
 app.use('/upload', utils);

@@ -5,19 +5,24 @@
 var app= angular.module("eamon",[]);
 
 
-app.controller('uploadCtrl',function($scope,$http){
+app.controller("uploadCtrl",function($scope,$http){
 
-    var url='127.0.0.1:3000';
+    var url="127.0.0.1:3000";
 
+    var path ='111122';
     var data=  {
-        name:$scope.file_fullpath,
+        name:path,
         other:'others'
     };
 
-    $scope.submit =function(){
+    $scope.gosubmit =function(){
 
 
-        $http.post(url+"/upload",data).success(function (reg_return) {
+        var config = {
+            headers : { 'Content-Type': undefined }
+        };
+
+        $http.post(url+"/upload",data,config).success(function (reg_return) {
 
             var result = reg_return.reg_result;
             if(result.result === true){
