@@ -7,7 +7,7 @@ var app= angular.module("eamon",[]);
 
 app.controller("uploadCtrl",function($scope,$http){
 
-    var url="127.0.0.1:3000";
+    var url="http://127.0.0.1:3000";
 
     var path ='111122';
     var data=  {
@@ -15,8 +15,33 @@ app.controller("uploadCtrl",function($scope,$http){
         other:'others'
     };
 
-    $scope.gosubmit =function(){
+    $scope.testfunction =function() {
 
+        var config = {
+            headers: {'Content-Type': undefined}
+        };
+
+        $http.post(url + "/upload/file", data, config)
+            .success(function (reg_return) {
+
+            var result = reg_return.reg_result;
+            if (result.result === true) {
+
+            }
+
+        }).error(function(data, status, headers, config) {
+            console.log(data);
+            console.log(status);
+            console.log(headers);
+            console.log(config);
+
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+    }
+
+
+    $scope.gosubmit =function(){
 
         var config = {
             headers : { 'Content-Type': undefined }
@@ -29,7 +54,15 @@ app.controller("uploadCtrl",function($scope,$http){
 
             }
 
-        });
+        }).error(function(data, status, headers, config) {
+            console.log(data);
+            console.log(status);
+            console.log(headers);
+            console.log(config);
+
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });;
 
     };
 

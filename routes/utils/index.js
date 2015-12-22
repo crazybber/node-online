@@ -6,7 +6,7 @@ var express = require('express');
 var router = express.Router();
 
 
-router.post('/', function (req, res) {
+router.post('/file', function (req, res) {
 
 
     var tmp = req.body;

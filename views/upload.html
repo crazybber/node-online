@@ -6,8 +6,10 @@
 </head>
 <body ng-app="eamon" ng-controller="uploadCtrl">
 
+<button ng-click="testfunction()"> testfunction</button>
 
-<form action="/upload/file" ng-submit="gosubmit()">
+
+<form name="myform" action="/upload/file" ng-submit="gosubmit()">
     <input type="file" ng-model="file_fullpath">
     <input type="submit" value="upload">
 </form>
