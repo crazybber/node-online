@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <title>Test upload function</title>
 </head>
-<body ng-app="eamon" ng-controller="uploadCtrl">
+<body ng-app="eamon" >
 
 <button ng-click="testfunction()"> testfunction</button>
 
-
-<form name="myform" action="/upload/file" ng-submit="gosubmit()">
-    <input type="file" ng-model="file_fullpath">
-    <input type="submit" value="upload">
+<form name="myform" ng-controller="uploadCtrl" ng-submit="gosubmit()">
+    <input type="file" name="filename" ng-model="file_fullpath">
+    <input type="submit" value="upload"  ng-model="submit_btn">
 </form>
 
 

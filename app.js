@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, 'public')));
 
-var utils = require('./routes/utils');
+var utils = require('./routes/utils/index');
 var routes = require('./routes/index'); // this is test route module ,will be removed in release version
 var add = require('./routes/users/add'); // this is test route module ,will be removed in release version
 //var webpages = require('./routes/web');
