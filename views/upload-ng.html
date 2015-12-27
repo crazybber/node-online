@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test upload function</title>
+</head>
+<body ng-app="eamon" ng-controller="uploadController">
+
+<button ng-click="testfunction()"> testfunction</button>
+<br/>
+<br/>
+<br/>
+<br/>
+    <input type="file" name="filename"  onchange="" />
+    <input type="submit" value="upload"  ng-model="submit_btn"/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<input name="myFile" type="file"/>
+<button ng-click="doupload()">upload by module</button>
+
+
+<script src="../bower_components/angular/angular.min.js" ></script>
+<script src="../bower_components/angular-upload/angular-upload.min.js" ></script>
+<script src="../public/javascripts/upload-ng.js"></script>
+</body>
+</html>

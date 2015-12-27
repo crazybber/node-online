@@ -7,7 +7,7 @@ var router = express.Router();
 var formidable = require('formidable');
 var   fs = require('fs');
 
-router.post('/', function (req, res) {
+router.post('/file', function (req, res) {
 
     var form = new formidable.IncomingForm();   //创建上传表单
     form.encoding = 'utf-8';		//设置编辑
@@ -55,8 +55,6 @@ router.post('/', function (req, res) {
     console.log(tmp);
     console.log('image  in');
     console.log('image  in');
-
-
 
 });
 

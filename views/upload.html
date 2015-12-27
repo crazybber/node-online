@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <title>Test upload function</title>
 </head>
-<body ng-app="eamon" >
 
-<button ng-click="testfunction()"> testfunction</button>
+<body ng-app="eamon">
+<button ng-click="testfunction()"> testfunction </button>
 
-<form name="myform" ng-controller="uploadCtrl" ng-submit="gosubmit()">
+<form name="myform"  ng-controller="uploadCtrl" ng-submit="goSubmit()">
     <input type="file" name="filename" ng-model="file_fullpath">
-    <input type="submit" value="upload"  ng-model="submit_btn">
+    <input type="submit" name="upinput" value="upload" ng-model="submit_btn">
 </form>
 
-
-<script src="../bower_components/angular/angular.min.js" ></script>
 <script src="../public/javascripts/upload.js"></script>
+<script src="../bower_components/angular/angular.min.js" ></script>
+
 </body>
 </html>
