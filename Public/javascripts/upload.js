@@ -47,7 +47,7 @@ app.controller("uploadCtrl",function($scope,$http){
             headers : { 'Content-Type': undefined }
         };
 
-        $http.post(url+'/upload',data,config).success(function (reg_return) {
+        $http.post(url+'/upload/file',data,config).success(function (reg_return) {
             var result = reg_return.reg_result;
             if(result.result === true){
 
