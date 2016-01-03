@@ -1,6 +1,6 @@
  //starpage.
 
-http://127.0.0.1:3000/starpage/
+//http://127.0.0.1:3000/starpage/
 
 {
     "request_push":{
@@ -8,7 +8,7 @@ http://127.0.0.1:3000/starpage/
         "state":"country",
         "city":"city",
         "gender":"gender",
-        "channel":"10001"  //10001 官方渠道，10002//xx商城
+        "channel":"10001",  //10001 官方渠道，10002//xx商城
         "model":{
         "brand":"Hawei Mate 7",
         "resolution":"1024x768",

@@ -1,0 +1,93 @@
+//服务中心
+// http://127.0.0.1:3000/servicecenter/catlogs/query
+// 将需要用户app呈现的模块信息数据推送给app.
+// 1、类目信息
+// 2、类目中需要呈现的服务模块信息
+// 3、数据
+// 服务端可以生成一个文件下载链接。
+// servicecenter/catlogs/query
+// servicecenter/catlogs/refresh
+// servicecenter/catlogs/download/filename
+{
+    "head": {
+        "appversion": "1",
+        "token": "guid",
+        "app_platform": "andorid",
+        "encryption": "base64",
+        "api_order": "123456", //。
+        "channel": "10001", //10001 官方渠道，10002//xx商城
+        "extend": "reserved"
+    },
+    "query_mod_list": {
+        "userid": "useriddddddddddddddd",
+        "catlogtype": "1", //catlogType  
+        "currentpage": "1",
+        "pageSize": "15", //default 15 
+        "addtionInfo": "more Content"
+    }
+}
+
+{
+    "head": {
+        "erorCode": "0", // 0 for no error.
+        "errorMsg": "no error",
+        "server_time": "时间戳字符串",
+        "api_order": "123456", //
+        "serivce_code": "0003",
+        "extension":"more info"
+    },
+    "query_result": [  
+        {
+            "icon": "image_url",
+            "name": "appname",
+            "discription": "app discription",
+            "apk_url":"plugin download url",
+            "h5_url":"h5 page url",
+            "favorite_status": "1",
+            "app_id":"guiddddddddddddd"
+        }
+    ]
+}
+
+//download
+//download file from file server
+// File Server will be designed by nodejs
+
+
+//收藏
+
+{
+    "head": {
+        "appversion": "1",
+        "token": "guid",
+        "app_platform": "andorid",
+        "encryption": "base64",
+        "api_order": "123456", //。
+        "channel": "10001", //10001 官方渠道，10002//xx商城
+        "extend": "reserved"
+    },
+    "favorite": {
+        "userid": "useriddddddddddddddd",
+        "action":"isfavorite",  //0  cancel 1  ok.
+        "app_id": "more Content"
+    }
+}
+
+{
+    "head": {
+        "appversion": "1",
+        "token": "guid",
+        "app_platform": "andorid",
+        "encryption": "base64",
+        "api_order": "123456", //。
+        "channel": "10001", //10001 官方渠道，10002//xx商城
+        "extend": "reserved"
+    },
+    "favorite_result": {
+           "app_id": "appiddddddddddd",
+           "favorite_status": "1", 
+           "addtionInfo": "more Content"
+    }
+}
+
+
