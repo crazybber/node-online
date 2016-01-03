@@ -9,7 +9,7 @@ var   fs = require('fs');
 
 router.post('/file', function (req, res) {
 
-    var data= req.body.data;
+    var data= req.body.files;
     //console.log(data);
     var form = new formidable.IncomingForm();   //创建上传表单
     form.encoding = 'utf-8';		//设置编辑
@@ -26,14 +26,12 @@ router.post('/file', function (req, res) {
             return;
         }
 
-        res.writeHead(200, {'content-type': 'text/plain'});
-        res.write('received upload:\n\n');
-        res.end(util.inspect({fields: fields, files: files}));
-
-
+        //res.writeHead(200, {'content-type': 'text/plain'});
+        //res.write('received upload:\n\n');
+        //res.end(util.inspect({fields: fields, files: files}));
 
         var extName = '';  //后缀名
-        switch (files[0].filename.type) {
+        switch (files.file.type) {
             case 'image/pjpeg':
                 extName = 'jpg';
                 break;
@@ -54,15 +52,15 @@ router.post('/file', function (req, res) {
             return;
         }
 
-        var avatarName = Math.random() + '.' + extName;
-        var newPath = form.uploadDir + avatarName;
+        var filename = files.file.name;
+        var newPath = form.uploadDir +'/'+ filename;
         console.log(newPath);
-        fs.renameSync(files[0].filename.path, newPath);  //重命名
+        fs.renameSync(files.file.path, newPath);  //重命名
+        fs.unlink(files.file.path);
 
     });
 
-    var tmp = req.body;
-    console.log(tmp);
+
     console.log('image  in');
     console.log('image  in');
 

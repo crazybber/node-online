@@ -5,12 +5,12 @@
     <title>Test upload function</title>
 </head>
 
-<body ng-app="eamon" >
+<body ng-app="eamon"  ng-controller="uploadCtrl">
 
 <input type="file" name="filename" ng-model="testupfile">
 <button ng-click="testfunction()"> testfunction </button>
 
-<form name="myform" enctype="multipart/form-data" ng-controller="uploadCtrl" ng-submit="goSubmit()">
+<form name="myform" ng-submit="goSubmit()">
     <input type="file"  name="filename"  multiple="multiple" ng-model="up_file">
     <input type="submit" name="upinput" value="upload"  ng-model="submit_btn">
 </form>

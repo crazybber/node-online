@@ -19,19 +19,20 @@ app.controller('updateCtrl', function ($scope, Upload, $timeout) {
         file.upload = Upload.upload(datatoUpload);
 
 
-        var tmout =function (response) {
+        //uploaded OK callback
+        var uploadedCallback =function (response) {
             $timeout(function () {
                 file.result = response.data;
             });
         };
-        var errorcallback =function (response) {
+        var errorCallback =function (response) {
             if (response.status > 0)
                 $scope.errorMsg = response.status + ': ' + response.data;
         };
-        var evtcalback =function (evt) {
+        var processCallback =function (evt) {
             // Math.min is to fix IE which reports 200% sometimes
             file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
         };
-        file.upload.then(tmout, errorcallback, evtcalback);
+        file.upload.then(uploadedCallback, errorCallback, processCallback);
     }
 });

@@ -11,11 +11,11 @@ app.controller("uploadCtrl",function($scope,$http){
 
     var path ='test path ';
 
-    var senddata ={data: {
+    var senddata ={
         name:path,
         other:'others',
         file:$scope.up_file
-    }};
+    };
 
     $scope.goSubmit =function(){
         var config = {
