@@ -1,91 +1,37 @@
 /**
  * Created by Administrator on 2015/12/20.
+ *var uploadurl="http://localhost:3000/upload/file";
  */
 
-var app= angular.module("eamon",['lr.upload']);
+//inject angular file upload directives and services.
+var app = angular.module('fileUpload', ['ngFileUpload']);
+
+app.controller('updateCtrl', function ($scope, Upload, $timeout) {
+    var uploadurl="http://localhost:3000/upload/file";
+
+    $scope.uploadPic = function(file) {
+
+        var datatoUpload ={
+            url: uploadurl,
+            data: {file: file, username: $scope.username},
+        }
+
+        file.upload = Upload.upload(datatoUpload);
 
 
-app.controller("uploadController",function($scope,$http,upload){
-
-    var url="http://127.0.0.1:3000";
-
-    var path ='111122';
-    var data=  {
-        name:path,
-        other:'others'
-    };
-
-    $scope.testfunction =function() {
-
-        var config = {
-            headers: {'Content-Type': undefined}
+        var tmout =function (response) {
+            $timeout(function () {
+                file.result = response.data;
+            });
         };
-
-        $http.post(url + "/upload", data, config)
-            .success(function (reg_return) {
-
-            var result = reg_return.reg_result;
-            if (result.result === true) {
-
-            }
-
-        }).error(function(data, status, headers, config) {
-            console.log(data);
-            console.log(status);
-            console.log(headers);
-            console.log(config);
-
-            // called asynchronously if an error occurs
-            // or server returns response with an error status.
-        });
-    };
-
-
-    $scope.gosubmit =function(){
-
-        var config = {
-            headers : { 'Content-Type': undefined }
+        var errorcallback =function (response) {
+            if (response.status > 0)
+                $scope.errorMsg = response.status + ': ' + response.data;
         };
-
-        $http.post(url+"/upload",data,config).success(function (reg_return) {
-
-            var result = reg_return.reg_result;
-            if(result.result === true){
-
-            }
-
-        }).error(function(data, status, headers, config) {
-            console.log(data);
-            console.log(status);
-            console.log(headers);
-            console.log(config);
-
-            // called asynchronously if an error occurs
-            // or server returns response with an error status.
-        });;
-
-    };
-
-
-    var newurl = url.toString() +'/upload/file';
-    $scope.doupload = function () {
-        upload({
-            url: newurl,
-            method: 'POST',
-            data: {
-                anint: 123,
-        //      aBlob: Blob([1,2,3]), // Only works in newer browsers
-        //        aFile: $scope.myFile, // a jqLite type="file" element, upload() will extract all the files from the input and put them into the FormData object before sending.
-            }
-        }).then(
-            function (response) {
-                console.log(response.data); // will output whatever you choose to return from the server on a successful upload
-            },
-            function (response) {
-                console.error(response); //  Will return if status code is above 200 and lower than 300, same as $http
-            }
-        );
-    };
-
-
+        var evtcalback =function (evt) {
+            // Math.min is to fix IE which reports 200% sometimes
+            file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
+        };
+        file.upload.then(tmout, errorcallback, evtcalback);
+    }
 });

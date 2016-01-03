@@ -5,12 +5,14 @@
     <title>Test upload function</title>
 </head>
 
-<body ng-app="eamon">
+<body ng-app="eamon" >
+
+<input type="file" name="filename" ng-model="testupfile">
 <button ng-click="testfunction()"> testfunction </button>
 
-<form name="myform" ng-controller="uploadCtrl" ng-submit="goSubmit()">
-    <input type="file" name="filename" ng-model="file_fullpath">
-    <input type="submit" name="upinput" value="upload" ng-model="submit_btn">
+<form name="myform" enctype="multipart/form-data" ng-controller="uploadCtrl" ng-submit="goSubmit()">
+    <input type="file"  name="filename"  multiple="multiple" ng-model="up_file">
+    <input type="submit" name="upinput" value="upload"  ng-model="submit_btn">
 </form>
 
 <script src="../bower_components/angular/angular.min.js" ></script>

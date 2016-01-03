@@ -9,6 +9,8 @@ var   fs = require('fs');
 
 router.post('/file', function (req, res) {
 
+    var data= req.body.data;
+    //console.log(data);
     var form = new formidable.IncomingForm();   //创建上传表单
     form.encoding = 'utf-8';		//设置编辑
     form.uploadDir = 'public';	 //设置上传目录
@@ -18,10 +20,18 @@ router.post('/file', function (req, res) {
     form.parse(req, function(err, fields, files) {
 
         if (err) {
+
             res.locals.error = err;
             res.render('index', { title: 'result' });
             return;
         }
+
+        res.writeHead(200, {'content-type': 'text/plain'});
+        res.write('received upload:\n\n');
+        res.end(util.inspect({fields: fields, files: files}));
+
+
+
         var extName = '';  //后缀名
         switch (files[0].filename.type) {
             case 'image/pjpeg':
