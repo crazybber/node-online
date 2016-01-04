@@ -3,25 +3,40 @@
 //http://127.0.0.1:3000/starpage/
 
 {
+    "req_head": {
+        "appversion": "1",
+        "token": "guid",
+        "app_platform": "andorid",
+        "encryption": "base64",
+        "api_order": "123456", //服务器设计的用于区分每个协议api的整型数字。
+        "channel": "10001", //10001 官方渠道，10002//xx商城
+        "extend": "reserved"
+    },
     "request_push":{
         "country":"country",
         "state":"country",
         "city":"city",
         "gender":"gender",
-        "channel":"10001",  //10001 官方渠道，10002//xx商城
         "model":{
         "brand":"Hawei Mate 7",
         "resolution":"1024x768",
-        "device_type":"1",    //1,android ,2,ios,3,windows,4 pc
-        "addtionInfo":"for future"
-        }
+        "device_type":"1",    //1,android ,2,ios,3,windows,4 pc     
+        },
+        "more":"for future"
     }
 }
 
 
 {
+    "res_head": {
+        "erorCode": "0", // 0 for no error.
+        "errorMsg": "no error",
+        "server_time": "时间戳字符串",//服务器发出数据包的时间
+        "api_order": "123456", //
+        "serivce_code": "0003", //为android客户端提供的接口行为依赖识别码
+        "extend":"reserved"
+    }
     "request_result":{
-        "result":"true",
         "imageList":[{"image":"url",
                      "name":"name",
                      "cacheid":"guid",
@@ -34,9 +49,7 @@
                       "data":"imagedata",
                       "description":"description",
                       "url":"url_when_click_to_jump_to"},],
-        "erorCode":"0", //需要定义
-        "errorMsg":"no error",
-        "addtionInfo":"for future"
+        "more":"for future"
     }
 }
 

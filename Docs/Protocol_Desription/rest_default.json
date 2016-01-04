@@ -2,13 +2,14 @@
 //http://127.0.0.1:3000/default/index
 //广告
 {
-    "head": {
+    "req_head": {
         "appversion": "1",
         "token": "guid",
         "app_platform": "andorid",
         "encryption": "base64",
-        "api_order": "123456", //。
-        "channel": "10001" //10001 官方渠道，10002//xx商城
+        "api_order": "123456", //服务器设计的用于区分每个协议api的整型数字。
+        "channel": "10001", //10001 官方渠道，10002//xx商城
+        "extend": "reserved"
     },
     "request": {
         "modules": "1", // 1为广告推荐，2为最近使用的内容
@@ -21,14 +22,14 @@
 }
 
 {
-    "head": {
+    "res_head": {
         "erorCode": "0", // 0 for no error.
         "errorMsg": "no error",
-        "server_time": "时间戳字符串",
+        "server_time": "时间戳字符串",//服务器发出数据包的时间
         "api_order": "123456", //
-        "serivce_code": "0003",
-        "extension":"more info"
-    },
+        "serivce_code": "0003", //为android客户端提供的接口行为依赖识别码
+        "extend":"reserved"
+    }
     "request_result": {
         "modules": "3", // 1为广告推荐，2为最近使用的内容
         "content": [
@@ -49,19 +50,20 @@
                 "url": "url_when_click_to_jump_to"
             },
         ],
-        "addtionInfo": "for future"
+        "more": "for future"
     }
 }
 //内容，
 //http://127.0.0.1:3000/default/index
 {
-     "head": {
+    "req_head": {
         "appversion": "1",
         "token": "guid",
         "app_platform": "andorid",
         "encryption": "base64",
-        "api_order": "123456", //。
-        "channel": "10001" //10001 官方渠道，10002//xx商城
+        "api_order": "123456", //服务器设计的用于区分每个协议api的整型数字。
+        "channel": "10001", //10001 官方渠道，10002//xx商城
+        "extend": "reserved"
     },
     "request_default": {
         "modules": "2", // 1为广告推荐，2为最近使用的内容。
@@ -73,12 +75,14 @@
     }
 }
 {
-     "head": {
-        "erorCode": "0", //需要定义
+     "res_head": {
+        "erorCode": "0", // 0 for no error.
         "errorMsg": "no error",
-        "server_time": "2016-01-03 18:57:50:2451146",
-        "api_order": "001" //。
-    },
+        "server_time": "时间戳字符串",//服务器发出数据包的时间
+        "api_order": "123456", //
+        "serivce_code": "0003", //为android客户端提供的接口行为依赖识别码
+        "extend":"reserved"
+    }
     
     "request_result": {
         "modules": "3", // 1为广告推荐，2为最近使用的内容。
@@ -100,6 +104,6 @@
                 "url": "url_when_click_to_jump_to"
             },
         ],
-        "addtionInfo": "for future using"
+        "more": "for future using"
     }
 }

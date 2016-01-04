@@ -9,12 +9,12 @@
 // servicecenter/catlogs/refresh
 // servicecenter/catlogs/download/filename
 {
-    "head": {
+    "req_head": {
         "appversion": "1",
         "token": "guid",
         "app_platform": "andorid",
         "encryption": "base64",
-        "api_order": "123456", //。
+        "api_order": "123456", //服务器设计的用于区分每个协议api的整型数字。
         "channel": "10001", //10001 官方渠道，10002//xx商城
         "extend": "reserved"
     },
@@ -28,13 +28,13 @@
 }
 
 {
-    "head": {
+    "res_head": {
         "erorCode": "0", // 0 for no error.
         "errorMsg": "no error",
-        "server_time": "时间戳字符串",
+        "server_time": "时间戳字符串",//服务器发出数据包的时间
         "api_order": "123456", //
-        "serivce_code": "0003",
-        "extension":"more info"
+        "serivce_code": "0003", //为android客户端提供的接口行为依赖识别码
+        "extend":"reserved"
     },
     "query_result": [  
         {
@@ -57,12 +57,12 @@
 //收藏
 
 {
-    "head": {
+    "req_head": {
         "appversion": "1",
         "token": "guid",
         "app_platform": "andorid",
         "encryption": "base64",
-        "api_order": "123456", //。
+        "api_order": "123456", //服务器设计的用于区分每个协议api的整型数字。
         "channel": "10001", //10001 官方渠道，10002//xx商城
         "extend": "reserved"
     },
@@ -74,14 +74,13 @@
 }
 
 {
-    "head": {
-        "appversion": "1",
-        "token": "guid",
-        "app_platform": "andorid",
-        "encryption": "base64",
-        "api_order": "123456", //。
-        "channel": "10001", //10001 官方渠道，10002//xx商城
-        "extend": "reserved"
+    "res_head": {
+        "erorCode": "0", // 0 for no error.
+        "errorMsg": "no error",
+        "server_time": "时间戳字符串",//服务器发出数据包的时间
+        "api_order": "123456", //
+        "serivce_code": "0003", //为android客户端提供的接口行为依赖识别码
+        "extend":"reserved"
     },
     "favorite_result": {
            "app_id": "appiddddddddddd",

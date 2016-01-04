@@ -1,6 +1,6 @@
-//1、登陆
-// http://127.0.0.1:3000/users/login
-// 使用post方式，客户端提交的登陆对象数据结构
+//head and other standard fileds
+
+
 {
     "req_head": {
         "appversion": "1",
@@ -11,17 +11,8 @@
         "channel": "10001", //10001 官方渠道，10002//xx商城
         "extend": "reserved"
     },
-    "logout": {
-        "user": "username",
-        "mobile": "15088551600",
-        "mail": "sally@eamon.com",
-        "password": "password",
-        "reg_type": "1", //1,android ,2,ios,3,windows,4 pc
-        "login_time_cli": "登陆时间"
-    }
-}
-//服务端返回的成功数据
-{
+    
+    
     "res_head": {
         "erorCode": "0", // 0 for no error.
         "errorMsg": "no error",
@@ -29,19 +20,6 @@
         "api_order": "123456", //
         "serivce_code": "0003", //为android客户端提供的接口行为依赖识别码
         "extend":"reserved"
-    },
-    "logout_result": {
-        "user": "username",
-        "userid":useridddddddddddd"",
-        "result":"exit_ok",
-        "online_status": "offline"  
     }
+    
 }
-// /reg
-// /login
-// /admin
-// /user/update
-// /user/query
-// /user/resetpass
-// /logout
-// /
