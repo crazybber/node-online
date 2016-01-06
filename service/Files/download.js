@@ -10,7 +10,8 @@ function downloadMgr(req, res){
 
     var transfer = new fileTransfer(req, res);
 
-    var filePath = '‪F:/TDDOWNLOAD/VirtualBox-5.0.10-104061-Win.exe';
+    //var filePath = '‪F:/TDDOWNLOAD/VirtualBox-5.0.10-104061-Win.exe';
+    var filePath='D:/Program Files/Download/shendun.mp4';
 
     transfer.Download(filePath);
 
