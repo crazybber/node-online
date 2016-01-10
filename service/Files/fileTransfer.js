@@ -25,12 +25,18 @@ Transfer.prototype._configHeader = function (Config) {
     // 如果startPos为0，表示文件从0开始下载的，否则则表示是断点下载的。
     if (startPos == 0) {
         resp.setHeader('Accept-Range', 'bytes');
+        resp.writeHead(200, 'OK',{
+            'Content-Type': 'application/octet-stream',
+            'Content-Length': fileSize-startPos
+        });
     } else {
         resp.setHeader('Content-Range', 'bytes ' + startPos + '-' + (fileSize - 1) + '/' + fileSize);
+        resp.writeHead(206, 'Partial Content',{
+            'Content-Type': 'application/octet-stream',
+            'Content-Length': fileSize-startPos
+        });
     }
-    resp.writeHead(206, 'Partial Content', {
-        'Content-Type': 'application/octet-stream'
-    });
+
 };
 
 Transfer.prototype._init = function (filePath, down) {

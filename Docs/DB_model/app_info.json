@@ -1,0 +1,16 @@
+{
+  "app_name": "call_car",
+  "app_id":"appiddddddddddd",
+  "app_guid":"guidddddddddd",
+  "app_count":"number",
+  "app_upload_time":"2016-12-03 23:17:45",
+  "app_company":"tencent",
+  "app_author":"sam li",
+  "app_icon":{
+    "icon_type":"png",
+    "icon_path": "String",
+    "icon_key":"qiniu_url_key",
+    "icon_url":"http://ssfsdfsffsfdfdfdf"
+  },
+  "app_description":"some discription."
+}

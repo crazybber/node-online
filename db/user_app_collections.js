@@ -36,8 +36,6 @@ var schema = mongoose.Schema({
         isRecentUsed:Boolean,
     }
     ]
-
-
 });
 
 var reg_user=  mongoose.model('user_recent_app',schema);

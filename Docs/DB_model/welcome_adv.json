@@ -1,0 +1,24 @@
+{
+  "app_name":"motocarname",
+  "for_nation":"country",
+  "for_gender":"male",
+  "city":"shanghai",
+  "ip_area":"",
+  "image_List":[
+    {
+      "name":"pict1",
+      "image_url":"out_storage_url_key",
+      "target_url":"http://jump.to.some.destination"
+    },
+    {
+      "name":"pict1",
+      "image_url":"out_storage_url_key",
+      "target_url":"http://jump.to.some.destination"
+    },
+    {
+      "name":"pict1",
+      "image_url":"out_storage_url_key",
+      "target_url":"http://jump.to.some.destination"
+    }
+  ]
+}

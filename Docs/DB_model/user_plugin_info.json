@@ -1,0 +1,19 @@
+{
+  "user": "username",
+  "userid":"guidddddddddddddddd",
+  "user_app_collections":[{
+    "name": "String",
+    "productid":"sfsdfds3535sdfs45dsg",
+    "isFaverate":"String",
+    "isRecentUsed":"String",
+    "icon_url":"qiniukey"
+  },
+    {
+      "name": "String",
+      "productid":"sfsdfds3535sdfs45dsg",
+      "isFaverate":"String",
+      "isRecentUsed":"String",
+      "icon_url":"qiniukey"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "user": "username",
+  "userid":"guidddddddddddddddd",
+  "gender":"famale",
+  "nation":"china",
+  "city":"shanghai",
+  "address":"more detail infomation",
+  "mobile": "15088551600",
+  "mail": "sally@eamon.com",
+//  "password": "password", //密码使用MD5加密
+  "reg_way": "1", //1,使用邮箱和用户名，2，使用手机号码注册
+  "reg_tm_cli": "注册时间", // 系统获取
+  "token": "guid", //注册时留空
+  "register_platform": "andorid", //1,android ,2,ios,3,windows,4 pc
+  "channel": "10001", //10001 官方渠道，10002//xx商城
+  "user_3rd_key":"24fsdjyt25dfnsfb1425",
+  "device_key":"24fsdjyt25dfnsfb1425",
+  "online_status":"0",
+  "more": "for future"
+}

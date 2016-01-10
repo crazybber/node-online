@@ -1,0 +1,32 @@
+//user's device infomation
+{
+
+  "app_platform": [
+    {
+      "android":{
+        "version": "ver0.0.1",
+        "login_time":"2016-12-03 23:17:45",
+        "logout_time":"2016-12-03 23:17:45",
+        "logout_reason":"0" // 0 normal ,1 timeout
+      }
+
+    },
+    {
+      "ios":{
+        "version": "ver0.0.1",
+        "login_time":"2016-12-03 23:17:45",
+        "logout_time":"2016-12-03 23:17:45",
+        "logout_reason":"0" // 0 normal ,1 timeout
+      }
+    },
+    {
+      "windows":{
+        "version": "ver0.0.1",
+        "login_time":"2016-12-03 23:17:45",
+        "logout_time":"2016-12-03 23:17:45",
+        "logout_reason":"0" // 0 normal ,1 timeout
+      }
+    }],
+  "online_platform":["android","ios","pc"]
+
+}
