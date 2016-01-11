@@ -8,6 +8,7 @@ var express = require('express');
 var router = express.Router();
 var reg_user = require('../../db/reg_user');
 var uuid = require('node-uuid');
+var errorhandle=require('../errorhandle');
 
 
 /* add new  users. */
@@ -54,5 +55,6 @@ router.post('/reg', function(req, res) {
 
 });
 
+router.use(errorhandle);
 
 module.exports = router;
