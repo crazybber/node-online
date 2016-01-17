@@ -11,6 +11,12 @@ var uuid = require('node-uuid');
 var errorhandle=require('../route_errorhandle');
 
 
+router.get('/',function(req, res) {
+
+    console.log('....');
+
+});
+
 /* add new  users. */
 router.post('/reg', function(req, res) {
 
