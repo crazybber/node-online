@@ -11,12 +11,12 @@
       "target_url":"http://jump.to.some.destination"
     },
     {
-      "name":"pict1",
+      "name":"pict2",
       "image_url":"out_storage_url_key",
       "target_url":"http://jump.to.some.destination"
     },
     {
-      "name":"pict1",
+      "name":"pict3",
       "image_url":"out_storage_url_key",
       "target_url":"http://jump.to.some.destination"
     }

@@ -1,0 +1,14 @@
+{
+  "image": "url",
+  "name": "name",
+  "cacheid": "guid",
+  "data": "imagedata",
+  "description": "description",
+  "url_storage":"url_location_to_get_image",
+  "action": {
+    "target_url":"http://jump.to.url",
+    "target_page":"page_to_jump_to",
+    "app_plugin_no":"123123432",
+    "app_plugin_info":"this is a description  for recommend image"
+  }
+}
