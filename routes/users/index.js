@@ -21,7 +21,7 @@ var express = require('express');
 var router = express.Router();
 var reg_user = require('../../db/reg_user');
 var uuid = require('node-uuid');
-
+var errorhandle=require('../route_errorhandle');
 
 /* add new  users. */
 router.post('/reg', function(req, res) {
@@ -67,9 +67,10 @@ router.post('/reg', function(req, res) {
 
 });
 
-
 /* get userlist. */
 router.get('/query', function(req, res) {
+
+
   reg_user.find(function (err, userlist) {
     // res.send('../public/index.html');
     if(!err){
@@ -77,5 +78,8 @@ router.get('/query', function(req, res) {
     }
   });
 });
+
+router.use(errorhandle);
+
 
 module.exports = router;

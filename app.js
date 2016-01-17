@@ -25,7 +25,7 @@ var download = require('./routes/utils/download');
 var routes = require('./routes/index'); // this is test route module ,will be removed in release version
 var add = require('./routes/users/add'); // this is test route module ,will be removed in release version
 //var webpages = require('./routes/web');
-var users = require('./routes/users/users');
+var users = require('./routes/users/index');
 
 
 
