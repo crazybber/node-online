@@ -16,10 +16,14 @@
       "icon_url":"qiniukey"
     }
   ],
-  "subscribe":[
+  "service_subscribe":[
     "guid",
     "guid"
-  ]
+  ],
+  "service_subscribe_3rd":[
+    "guid",
+    "guid"
+  ],
 
   "more":"info"
 
