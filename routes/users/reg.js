@@ -17,6 +17,19 @@ router.get('/',function(req, res) {
 
 });
 
+/* get userlist. */
+router.get('/query', function(req, res) {
+
+
+  reg_user.find(function (err, userlist) {
+    // res.send('../public/index.html');
+    if(!err){
+      res.send(userlist);
+    }
+  });
+});
+
+
 /* add new  users. */
 router.post('/reg', function(req, res) {
 
