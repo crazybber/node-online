@@ -74,6 +74,6 @@ router.post('/reg', function(req, res) {
 
 });
 
-router.use(errorhandle);
+//router.use(errorhandle);
 
 module.exports = router;

@@ -83,7 +83,7 @@ var reg = require('./reg');
 
 router.use('/reg',reg);
 
-router.use(errorhandle);
+//router.use(errorhandle);
 
 
 module.exports = router;
