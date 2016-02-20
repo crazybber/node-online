@@ -21,6 +21,11 @@
         "more": "for future"
     }
 }
+curl -H "Content-type: application/json" -X POST -d '{"phone":"13521389587","password":"test"}' locolhost:3000/files/download
+curl -X POST -d 'json={"phone":"13521389587","password":"test"}’ locolhost:3000/files/upload
+
+
+
 //服务端返回的成功数据
 {
      "res_head": {

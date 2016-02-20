@@ -1,7 +1,8 @@
 /**
  * Created by Administrator on 2015/12/20.
  * parser Data 解析数据-->正确解析则校验数据--->校验正确转入注册队列--->注册。
- * 该类暂时无用
+ * 如果需要，权限校验,在当前过程中检查
+ * permission check and data incoming data check.
  */
 
 var express = require('express');
@@ -68,6 +69,6 @@ router.post('/reg', function(req, res) {
 
 });
 
-//router.use(errorhandle);
+router.use(errorhandle);
 
 module.exports = router;
