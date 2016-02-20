@@ -26,7 +26,7 @@ var routes = require('./routes/index'); // this is test route module ,will be re
 var add = require('./routes/users/add'); // this is test route module ,will be removed in release version
 //var webpages = require('./routes/web');
 var users = require('./routes/users/index');
-
+var files = require('./routes/files');
 
 
 //var welcome = require('./routes/welcome');
@@ -40,6 +40,8 @@ var users = require('./routes/users/index');
 //app.use('/', routes); ////this is test modules
 app.use('/add', add); //this is test modules
 app.use('/users', users);
+app.use('/files',files);
+
 app.use('/download', download);
 app.use('/upload', utils);
 
