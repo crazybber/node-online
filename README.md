@@ -6,7 +6,6 @@
 2、在Project终端（terminal）命令行中运行：NPM install
 3、增加一个Node.js类型的启动configuration，将javascript file指向：bin\www
 
-
 目前主要的后端模块：
 NodeJS：基于V8擎的服务端运行时环境。
 express：网络请求和路由。
@@ -36,7 +35,7 @@ service是放具体的业务类型处理逻辑，目前里面只有messagecenter
 view里面就是放了一些h5的页面和页面用的js文件。
 
 -----------------------------------
-如何把mongodb 安装成服务：
+如何把mongodb 安装成服务:
 命令行：
 mongod --config "C:\Program Files\MongoDB\Server\3.2\bin\mongodb.cfg" --install
 配置文件：mongod.cfg
