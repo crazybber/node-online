@@ -20,7 +20,6 @@ router.get('/',function(req, res) {
 /* get userlist. */
 router.get('/query', function(req, res) {
 
-
   reg_user.find(function (err, userlist) {
     // res.send('../public/index.html');
     if(!err){
@@ -38,11 +37,6 @@ router.post('/reg', function(req, res) {
     userinfo.reg_tm_srv= new Date().toString();
     userinfo.token = uuid.v1();
 
-    //var json_obj ={
-    //          username:userinfo.username,
-    //          mobile:userinfo.mobile,
-    //          email:userinfo.email,
-    //          password:userinfo.password};
     var user_to_add = new reg_user(userinfo);
 
 
