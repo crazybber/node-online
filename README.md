@@ -1,4 +1,4 @@
-### # ServerDemo_nodejs ###
+# # ServerDemo_nodejs #
 
 * 项目运行：
 * 确保安装Node.js 确保安装MongoDB.
@@ -35,7 +35,7 @@
 * view里面就是放了一些h5的页面和页面用的js文件。
 * 
 * -----------------------------------
-* 如何把mongodb 安装成服务:
+* ### 如何把mongodb 安装成服务: ###
 * 命令行：
 * mongod --config "C:\Program Files\MongoDB\Server\3.2\bin\mongodb.cfg" --install
 * 配置文件：mongod.cfg
