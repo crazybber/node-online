@@ -85,5 +85,4 @@ router.use('/reg',reg);
 
 router.use(errorhandle);
 
-
 module.exports = router;
