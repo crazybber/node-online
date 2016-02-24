@@ -41,11 +41,11 @@
 * mongod --config "C:\Program Files\MongoDB\Server\3.2\bin\mongodb.cfg" --install
 * 配置文件：mongod.cfg
 * 内容如下：
-* systemLog:
-*     destination: file
-*     path: E:\MongoDB\3.2\Data\log\mongod.log
-* storage:
-*     dbPath: E:\MongoDB\3.2\Data\db
+ systemLog:
+     destination: file
+     path: E:\MongoDB\3.2\Data\log\mongod.log
+ storage:
+     dbPath: E:\MongoDB\3.2\Data\db
 *（注：路径可以自由指定，以上path和 dbpath对应的路径和路径下mongod.log文件，如果不存在，需要手动创建。）
 * 
 * 删除 MongoDB 服务：
