@@ -36,7 +36,7 @@
 * 
 * -----------------------------------
 * ### 如何把mongodb 安装成服务: ###
-* 将MongoDB解压到某一位置：如C:\Program Files\MongoDB\
+* 将MongoDB解压到某一位置：（如，C:\Program Files\MongoDB\）
 * 命令行：
 * mongod --config "C:\Program Files\MongoDB\Server\3.2\bin\mongodb.cfg" --install
 * 配置文件：mongod.cfg
