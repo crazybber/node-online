@@ -22,6 +22,11 @@ router.use(function(err, req, res, next) {
         message: err.message,
         error: {}
     });
+    next(error);
+});
+
+router.use(function() {
+    return;
 });
 
 module.exports = router;

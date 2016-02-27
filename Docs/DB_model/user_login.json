@@ -8,7 +8,7 @@
   "channel": "10001", //10001 官方渠道，10002//xx商城
   "user_info_key":"egu8csncthr0-456wrsfssf",
   "user_3rd_key":"24fsdjyt25dfnsfb1425",
-  "device_key":"24fsdjyt25dfnsfb1425",
+  "user_device_key":"24fsdjyt25dfnsfb1425",
   "user_plugin_key":"s1dfs34fsdsf5dg6fhfghsse132",
   "online_status":"0",
   "more": "for future"

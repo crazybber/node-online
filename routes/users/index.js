@@ -80,10 +80,16 @@ var reg = require('./reg');
 //    }
 //  });
 //});
+//
+//
 
+//user register route redirection, for the next move
 router.use('/reg',reg);
 
-//router.use(errorhandle);
+//user query route route redirection , for the next action
+router.use('/query',reg);
 
+//route module error handle object
+router.use(errorhandle);
 
 module.exports = router;

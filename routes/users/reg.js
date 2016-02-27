@@ -1,7 +1,8 @@
 /**
  * Created by Administrator on 2015/12/20.
  * parser Data 解析数据-->正确解析则校验数据--->校验正确转入注册队列--->注册。
- * 该类暂时无用
+ * 如果需要，权限校验,在当前过程中检查
+ * permission check and data incoming data check.
  */
 
 var express = require('express');
@@ -20,7 +21,6 @@ router.get('/',function(req, res) {
 /* get userlist. */
 router.get('/query', function(req, res) {
 
-
   reg_user.find(function (err, userlist) {
     // res.send('../public/index.html');
     if(!err){
@@ -38,11 +38,6 @@ router.post('/reg', function(req, res) {
     userinfo.reg_tm_srv= new Date().toString();
     userinfo.token = uuid.v1();
 
-    //var json_obj ={
-    //          username:userinfo.username,
-    //          mobile:userinfo.mobile,
-    //          email:userinfo.email,
-    //          password:userinfo.password};
     var user_to_add = new reg_user(userinfo);
 
 
@@ -74,6 +69,6 @@ router.post('/reg', function(req, res) {
 
 });
 
-//router.use(errorhandle);
+router.use(errorhandle);
 
 module.exports = router;
