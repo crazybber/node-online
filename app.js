@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 var utils = require('./routes/utils/index');
 var download = require('./routes/utils/download');
-var routes = require('./routes/index'); // this is test route module ,will be removed in release version
+var auth_routes = require('./routes/index'); // this is test route module ,will be removed in release version
 var add = require('./routes/users/add'); // this is test route module ,will be removed in release version
 //var webpages = require('./routes/web');
 var users = require('./routes/users/index');
@@ -37,7 +37,7 @@ var files = require('./routes/files');
 //var profile = require('./routes/profile');
 
 
-//app.use('/', routes); ////this is test modules
+app.use('/', auth_routes); ////this is test modules
 app.use('/add', add); //this is test modules
 app.use('/users', users);
 app.use('/files',files);

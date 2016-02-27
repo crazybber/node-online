@@ -4,17 +4,25 @@
  */
 var express = require('express');
 var router = express.Router();
-var product = require('../db/product');
+var users_auth = require('../auth/users');
 
 
+router.use('/', function (req, res) {
 
+    var url= req.body.originalUrl;
 
-router.get('/', function (req, res) {
+    var ret=   users_auth.check_reg(reg);
 
-    product.find(function (err, prodcts) {
-       // res.send('../public/index.html');
-        res.send(prodcts);
-    });
+    if(false == ret)
+    {
+        res.send('sssssss');
+    }
+
+    console.log('.....');
+    //product.find(function (err, prodcts) {
+    //   // res.send('../public/index.html');
+    //    res.send(prodcts);
+    //});
 });
 
 module.exports = router;
