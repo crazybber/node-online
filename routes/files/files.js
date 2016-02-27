@@ -21,6 +21,8 @@ router.get('/qiniu',function(req, res) {
 router.post('/qiniu', function(req, res) {
 
     console.log('....');
+    console.log(req.body.json.phone);
+    console.log('.....');
 
 });
 
