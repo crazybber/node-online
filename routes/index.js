@@ -4,7 +4,7 @@
  */
 var express = require('express');
 var router = express.Router();
-var users_auth = require('../auth/users');
+var users_auth = require('./../auth');
 
 
 router.use('/', function (req, res) {

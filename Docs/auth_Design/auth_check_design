@@ -1,0 +1,42 @@
+方式1：
+
+使用express自带的框架，区分请求类型，拿到请求数据，与数据库的权限作比较，觉得是否拒绝。
+例如：
+router.post();
+
+curl -X POST -d 'json={"phone":"13521389587","password":"test"}’ localhost:3000/users/reg
+
+{
+    "req_head": {
+        "appversion": "1",
+        "token": "guid",
+        "app_platform": "andorid",
+        "encryption": "base64",
+        "api_order": "123456",
+        "channel": "10001",
+        "extend": "reserved"
+    },
+    "reg": {
+        "user": "username",
+        "mobile": "15088551600",
+        "mail": "sally@eamon.com",
+        "password": "password",
+        "reg_way": "1",
+        "reg_tm_cli": "注册时间",
+        "more": "for future"
+    }
+}
+
+方式2：
+
+给不同的请求类型的动作，定义数据库中权限模块，使用配置文件，区分请类型比如/user/reg，定义为01。
+
+然后取到数据库中的数据，进行权限校验。
+
+
+方式3：
+对方式2进行进一步的处理，直接将请求类型和权限模块的映射配置到，数据库中。初始化的时候，直接载入数据库中的相关映射。
+
+
+
+目前，使用方式1进行简单处理。
