@@ -13,19 +13,6 @@ var errorhandle=require('./../route_errorhandle');
 //var users_auth= require('./../../auth/users/reg/check');
 
 
-router.use(function(req, res){
-
-//TODO： step 1, check the authorization  access.
-
-
-//TODO: step 2, valid the incoming  data.
-
-
-//TODO: step 3, redirect the request and  data to the services dealing module.
-
-});
-
-
 router.get('/',function(req, res) {
 
     console.log('....');
