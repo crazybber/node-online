@@ -38,20 +38,8 @@ router.post('/user/login', function(req, res) {
 //判断请求类型
 
 
-
 });
 
 
+exportsexpo = module.exports= router;
 
-auth_check={
-    check_reg : function(param){
-
-    },
-    check_query : function(param){
-
-    }
-
-}
-
-
-exportsexpo = module.exports= auth_check;
