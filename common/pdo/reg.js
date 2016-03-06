@@ -24,3 +24,17 @@
 
  */
 
+
+function regMsg(obj){
+
+    this.obj = obj;
+    this.test='test';
+
+}
+
+regMsg.prototype.head=function()
+{
+
+}
+
+module.exports =exports= regMsg;
