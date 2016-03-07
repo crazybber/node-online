@@ -4,6 +4,8 @@
 
 var reg_check= require('./../../model/auth/auth_reg');
 
+var regData = require('./../../../common/pdo/reg');
+
 
 function check_reg(params)
 {
@@ -14,7 +16,11 @@ function check_reg(params)
 
     reg_check.find({can_register:false},function(err,reg_checks){
 
-        if (err) return console.error(err);
+        if (err) {
+            var retData= regData.Create();
+
+            return retData;
+        }
 
         console.log(reg_checks)
 

@@ -6,11 +6,11 @@
         "errorMsg": "no error",
         "server_time": "时间戳字符串",
         "api_order": "123456", //
-        "serivce_code": "0003",
+        "service_code": "0003",
         "extend":"more info"
 },
     "reg_result": {
-    "user": "username",
+        "user": "username",
         "userid":"useriddddddddddddddddd",
         "mobile": "15088551600",
         "mail": "sally@eamon.com",
@@ -25,16 +25,42 @@
  */
 
 
-function regMsg(obj){
+var error = require('./errorcode');
+var res_Msg={};
 
-    this.obj = obj;
-    this.test='test';
+res_Msg.res_head={
+         errorCode: "0",
+         errorMsg: "no error",
+         server_time: "",
+         api_order: "123456", //
+         service_code: "0003",
+         extend:"more info"
+};
 
-}
+res_Msg.res_body={
+        user: "username",
+        userid:"useriddddddddddddddddd",
+        mobile: "15088551600",
+        mail: "sally@eamon.com",
+        reg_time: "注册时间",
+        login_time: "登陆时间",
+        online_status: "fine",
+        token: "6c84fb90-12c4-11e1-840d-7b25c5ee775a",
+        extend: "for future"
 
-regMsg.prototype.head=function()
-{
+};
 
-}
+res_Msg.CreateHead=function(errorCode,others){
 
-module.exports =exports= regMsg;
+    this.res_head.errorCode = errorCode;
+    var erroIndex= 'err_'+errorCode;
+    this.res_head.errorMsg = error[erroIndex];
+
+    this.res_head.extend = others;
+    this.res_head.server_time = Date.now().toString();
+
+    return this.res_head;
+};
+
+
+module.exports =exports= res_Msg;
