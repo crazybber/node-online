@@ -3,10 +3,15 @@
  */
 
 var  users = require('./users');
+var  files = require('./files');
+var  admin = require('./admin');
 
 
 var auth={
-    users:users
+    users:users,
+    files:files,
+    admin:admin
+
 };
 
 

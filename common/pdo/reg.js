@@ -24,7 +24,6 @@
 
  */
 
-
 var error = require('./errorcode');
 var res_Msg={};
 
@@ -62,5 +61,20 @@ res_Msg.CreateHead=function(errorCode,others){
     return this.res_head;
 };
 
+res_Msg.CreateBody=function(){
+    this.res_body.online_status = 'no login';
+    this.res_body.reg_time = 'null';
+    return this.res_body;
+};
+
+res_Msg.GetFullMsg=function(){
+
+    var res_msg ={
+        res_head:this.CreateHead(0,''),
+        reg_body:this.CreateBody()
+    };
+    return res_msg;
+
+};
 
 module.exports =exports= res_Msg;

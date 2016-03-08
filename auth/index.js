@@ -26,11 +26,11 @@ router.post('/users/reg', function(req, res) {
 
     };
     //取数据库相关的权限集，校验当前请求是否有权限进一步操作。
-    var info = auth.users.check_reg(checkData);
+    var erroInfo = auth.users.check_reg(checkData);
 
-    if(!info.canpass)
+    if(erroInfo !=null)
     {
-        res.send(info.result);
+        res.send(erroInfo.info);
     }
 
 });

@@ -16,14 +16,16 @@ function check_reg(params)
 
     reg_check.find({can_register:false},function(err,reg_checks){
 
-        if (err) {
-            var retData= regData.Create();
+        //TODO... check logic code for condition.
 
+        if (err) {
+            var retData= regData.GetFullMsg();
             return retData;
         }
 
-        console.log(reg_checks)
+        console.log(reg_checks);
 
+        return null;
     });
 
 
