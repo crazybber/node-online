@@ -4,26 +4,6 @@
 例如：
 router.post();
 
-curl -X POST -d 'json={"phone":"13521389587","password":"test"}’ localhost:3000/users/reg
-
-curl -X POST -d 'json={ "req_head": { "appversion": "1",
-        "token": "guid",
-        "app_platform": "andorid",
-        "encryption": "base64",
-        "api_order": "123456",
-        "channel": "10001",
-        "extend": "reserved"
-    },
-    "reg": {
-        "user": "username",
-        "mobile": "15088551600",
-        "mail": "sally@eamon.com",
-        "password": "password",
-        "reg_way": "1",
-        "reg_tm_cli": "注册时间",
-        "more": "for future"
-    }
-}' localhost:3000/users/reg
 
 方式2：
 
