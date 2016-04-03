@@ -9,8 +9,8 @@ var regData = require('./../../../common/pdo/reg');
 
 function check_reg(params)
 {
-    var platform=params.app_platform;
-    var channel= params.channel;
+    var inplatform=params.app_platform;
+    var inchannel= params.channel;
 //校验参数中的两个字段，并返回结果
     console.log('check_reg');
 
@@ -18,7 +18,8 @@ function check_reg(params)
 //TODO ...次调试进行到这里
     reg_check.find({can_register:false},function(err,reg_checks){
 
-        //TODO... check logic code for condition.
+        //TODO... check logic code for condition
+        console.log(reg_checks);
 
         if (err) {
             var retData= regData.GetFullMsg();

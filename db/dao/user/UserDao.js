@@ -3,7 +3,7 @@
  * 这个是用户模型Dao，提供对用户注册信息保存，用户查询等数据库操作
  */
 
-var reg_user=require('./../../reg_user');
+var reg_user=require('./../../model/reg_user');
 
 var UserDao={
     saveReg:function(req,res){

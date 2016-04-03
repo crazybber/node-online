@@ -14,7 +14,7 @@ var schemaObject= {
 };
 var schema = mongoose.Schema(schemaObject);
 
-var auth_reg =  mongoose.model('auth_reg',schema);
+var auth_reg =  mongoose.model('reg_check',schema);
 
 
 exports=module.exports = auth_reg;
