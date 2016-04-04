@@ -32,4 +32,4 @@ var schema = mongoose.Schema({
 
 var reg_user=  mongoose.model('users',schema);
 
-module.exports = reg_user;
+exports=module.exports = reg_user;
