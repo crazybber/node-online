@@ -4,14 +4,14 @@
 
 var mongoose= require('./../../db_conn');
 
-var schemaObject= {
-    platform: String,
+
+var schema = new mongoose.Schema({
+    platform:String,
     channel:String,
     device_HardWareID:String,
     mobile:String,
-    can_register:Boolean
-};
-var schema = new mongoose.Schema(schemaObject);
+    can_register:{type:Boolean,default:false}
+});
 
 var auth_reg =  mongoose.model('reg_check',schema);
 
