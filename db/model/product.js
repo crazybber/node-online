@@ -3,7 +3,7 @@
  *  DB ODM Design
  */
 
-var mongoose= require('./db_conn');
+var mongoose= require('./../db_conn');
 
 
 var schema = mongoose.Schema({

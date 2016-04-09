@@ -17,4 +17,4 @@ db.once('open', function (callback) {
     // success open db conn!
 });
 
-exprots= module.exports = mongoose;
+exports= module.exports = mongoose;
