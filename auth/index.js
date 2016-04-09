@@ -17,20 +17,14 @@ router.post('/users/reg', function(req, res) {
     //校验 app_platform 和  channel 两个权限字段。
     //校验失败则拒绝。
     //成功，则默认放行。
-    var req_head= req.body.req_head;
-    console.log(req_head);
+    var protocalData= req.body;
 
-    var checkData={
-        app_platform : req_head.app_platform,
-        channel : req_head.channel
-
-    };
     //取数据库相关的权限集，校验当前请求是否有权限进一步操作。
-    var erroInfo = auth.users.check_reg(checkData);
+    var erroInfo = auth.users.check_reg(protocalData);
 
     if(erroInfo !=null)
     {
-        res.send(erroInfo.info);
+        res.send(erroInfo);
     }
 
 });

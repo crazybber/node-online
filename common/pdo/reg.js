@@ -25,7 +25,9 @@
  */
 
 var error = require('./errorcode');
-var res_Msg={};
+
+var res_Msg={}; //including  pdo.
+var reg_pdo ={};
 
 res_Msg.res_head={
          errorCode: "0",
@@ -51,9 +53,9 @@ res_Msg.res_body={
 
 res_Msg.CreateHead=function(errorCode,others){
 
-    this.res_head.errorCode = errorCode;
     var erroIndex= 'err_'+errorCode;
-    this.res_head.errorMsg = error[erroIndex];
+    this.res_head.errorCode = error[erroIndex].code;
+    this.res_head.errorMsg = error[erroIndex].msg;
     this.res_head.extend = others;
     this.res_head.server_time = Date.now().toString();
 
@@ -66,16 +68,45 @@ res_Msg.CreateBody=function(){
     return this.res_body;
 };
 
+res_Msg.setPdoHead = function(field,value){
 
+    this.res_head[field] = value;
+    if(field === 'errorCode')
+    {
+        var erroIndex= 'err_'+errorCode;
+        this.res_head.errorMsg = error[erroIndex].msg;
+    }
+
+};
+res_Msg.setPdoBody = function(field,value){
+
+    this.res_body[field] = value;
+
+};
+
+reg_pdo ={
+    res_head:res_Msg.res_head,
+    res_body:res_Msg.res_body
+};
+
+
+reg_pdo.setPdoHead = function(field,value){
+
+    res_Msg.setPdoHead(field,value);
+
+};
+
+reg_pdo.setPdoBody = function(field,value){
+
+    res_Msg.setPdoBody(field,value);
+
+};
 
 res_Msg.GetReg_PDO=function(){
 
-    var res_msg ={
-        res_head:this.CreateHead(0,''),
-        reg_body:this.CreateBody()
-    };
-    return res_msg;
-
+    return reg_pdo;
 };
+
+
 
 module.exports =exports= res_Msg;

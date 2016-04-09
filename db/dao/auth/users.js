@@ -7,10 +7,10 @@ var reg_check= require('./../../model/auth/auth_reg');
 var regpdo = require('./../../../common/pdo/reg');
 
 
-function check_reg(params)
+function check_reg(regPdoData)
 {
-    var inplatform=params.app_platform;
-    var inchannel= params.channel;
+    var inplatform=regPdoData.req_head.app_platform;
+    var inchannel= regPdoData.req_head.channel;
 //校验参数中的两个字段，并返回结果
 
  //从数据库中查询出不能注册的条件，检查当前注册行为里的信息，是否需要被过滤掉。
@@ -41,19 +41,20 @@ function check_reg(params)
     reg_check.find(condition,function(err,regchecks_sets){
 
         var  result_pdo = regpdo.GetReg_PDO();
+        result_pdo.setPdoHead('server_time',Date.now().toString());
         if (err) {
             //data base query error.
-
-
-
+            result_pdo.setPdoHead('errorCode',2);
+            return result_pdo;
         }
         //will be declined for no access rights
         if(regchecks_sets.length <=0)
         {
-
+            result_pdo.setPdoBody('reg_time',regPdoData.req_head.reg_tm_cli);
+            return result_pdo;
         }
 
-        return result_pdo;
+        return null;
     });
 
 
