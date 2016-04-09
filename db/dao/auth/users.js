@@ -4,7 +4,7 @@
 
 var reg_check= require('./../../model/auth/auth_reg');
 
-var regData = require('./../../../common/pdo/reg');
+var regpdo = require('./../../../common/pdo/reg');
 
 
 function check_reg(params)
@@ -14,7 +14,6 @@ function check_reg(params)
 //校验参数中的两个字段，并返回结果
 
  //从数据库中查询出不能注册的条件，检查当前注册行为里的信息，是否需要被过滤掉。
-
    //  var param= {
    //  platform:"apple",
    //  mobile:"1861602304",
@@ -33,19 +32,28 @@ function check_reg(params)
    //      }
    //  });
 
-    reg_check.find(function(err,regchecks_sets){
+    // create condition
+    var condition = {
+        can_register: true,
+        $or: [{platform: inplatform}, {channel: inchannel}]
+    };
 
-        //TODO... check logic code for condition
-        console.log(regchecks_sets);
+    reg_check.find(condition,function(err,regchecks_sets){
 
+        var  result_pdo = regpdo.GetReg_PDO();
         if (err) {
-            var retData= regData.GetFullMsg();
-            return retData;
+            //data base query error.
+
+
+
+        }
+        //will be declined for no access rights
+        if(regchecks_sets.length <=0)
+        {
+
         }
 
-        console.log(regchecks_sets);
-
-        return null;
+        return result_pdo;
     });
 
 

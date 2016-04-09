@@ -54,7 +54,6 @@ res_Msg.CreateHead=function(errorCode,others){
     this.res_head.errorCode = errorCode;
     var erroIndex= 'err_'+errorCode;
     this.res_head.errorMsg = error[erroIndex];
-
     this.res_head.extend = others;
     this.res_head.server_time = Date.now().toString();
 
@@ -67,7 +66,9 @@ res_Msg.CreateBody=function(){
     return this.res_body;
 };
 
-res_Msg.GetFullMsg=function(){
+
+
+res_Msg.GetReg_PDO=function(){
 
     var res_msg ={
         res_head:this.CreateHead(0,''),
