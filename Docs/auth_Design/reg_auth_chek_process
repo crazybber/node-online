@@ -1,0 +1,38 @@
+注册流程。
+
+PDO： protocol data object
+
+1、客户端发起注册申请，post注册信息到服务端。
+2、服务端接收注册信息。
+3、服务端权限模块拦截注册信息，根据注册信息，装一个注册信息对象（该对象是一个标准的 PDO）。
+4、权限代理将注册信息对象，传递给dao的注册功能的权限校验对象。
+5、dao内在的注册权限校验对象，使用注册信息对象内的参数，查询权限表，返回结果。
+6、权限拦截模块，根据返回结果决定是否进行后续流程。（默认放行）。
+
+
+curl -X POST -d 'json={"phone":"13521389587","password":"test"}’ localhost:3000/users/reg
+
+
+curl -X POST -d 'json={"phone":"13521389587","password":"test"}’ localhost:3000/users/reg
+
+curl -H "Content-type: application/json" -X POST -d '{"req_head": { "appversion": "1",
+        "token": "guid",
+        "app_platform": "andorid",
+        "encryption": "base64",
+        "api_order": "123456",
+        "channel": "10001",
+        "extend": "reserved"
+    },
+    "reg": {
+        "user": "username",
+        "mobile": "15088551600",
+        "mail": "test@eamon.com",
+        "password": "password",
+        "reg_way": "1",
+        "reg_tm_cli": "注册时间",
+        "more": "for future"
+    }
+}' localhost:3000/users/reg
+
+//测试协议时使用以下命令，给服务端post数据。 其中jsonmsg 是工程根目录下的一个文本文件，里面存放通信的数据格式。
+wget --header="Content-type:application/json" --post-file jsonmsg localhost:3000/users/reg

@@ -7,9 +7,10 @@
 
 var express = require('express');
 var router = express.Router();
-var reg_user = require('../../db/reg_user');
+var reg_user = require('./../../db/reg_user');
 var uuid = require('node-uuid');
-var errorhandle=require('../route_errorhandle');
+var errorhandle=require('./../route_errorhandle');
+//var users_auth= require('./../../auth/users/reg/check');
 
 
 router.get('/',function(req, res) {

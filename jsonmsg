@@ -1,0 +1,20 @@
+{
+"req_head": { 
+		"appversion": "1",
+        "token": "guid",
+        "app_platform": "andorid",
+        "encryption": "base64",
+        "api_order": "123456",
+        "channel": "10001",
+        "extend": "reserved"
+    },
+"reg_body": {
+        "user": "username",
+        "mobile": "15088551600",
+        "mail": "test@eamon.com",
+        "password": "password",
+        "reg_way": "1",
+        "reg_tm_cli": "×¢²áÊ±¼ä",
+        "more": "for future"
+	}
+}

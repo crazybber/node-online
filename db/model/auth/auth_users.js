@@ -6,17 +6,17 @@
  */
 
 
-var mongoose= require('./db_conn');
+var mongoose= require('./../../db_conn');
 
 var schemaObject= {
     platform: String,
-    username:string,
-    mobile:string,
-    can_register:Boolean,
+    username:String,
+    mobile:String,
+    can_register:Boolean
 };
 var schema = mongoose.Schema(schemaObject);
 
-var permission =  mongoose.model('permission',schema);
+var permission =  mongoose.model('auth_user',schema);
 
 
 module.exports = permission;
