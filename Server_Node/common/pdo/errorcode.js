@@ -20,6 +20,11 @@ error={
         msg:'data base query error'
     },
 
+    err_3:{
+        code:3,
+        msg:'resource not exist'
+    },
+
     err_403:{
         code:403,
         msg:'access deny'
