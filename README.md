@@ -1,5 +1,5 @@
-# # ServerDemo_nodejs #
-
+# # Server_nodejs #
+# 项目位于 Server_Node 文件夹中
 * 项目运行：
 * 确保安装Node.js 确保安装MongoDB.
 * 1、从云端git到Project。
