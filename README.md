@@ -1,5 +1,5 @@
-# # Server_nodejs #
-# 项目位于 Server_Node 文件夹中
+# Node-WebAPI
+
 * 项目运行：
 * 确保安装Node.js 确保安装MongoDB.
 * 1、从云端git到Project。
@@ -52,5 +52,5 @@
 *（注：路径可以自由指定，以上path和 dbpath对应的路径和路径下mongod.log文件，如果不存在，需要手动创建。）
 * 
 * 删除 MongoDB 服务：
-* ^M
-* sc delete mongodb ^M
+* 
+* sc delete mongodb 
