@@ -13,7 +13,7 @@
     "express": "~4.13.4",
     "formidable": "^1.0.17",
     "kerberos": "0.0.17",
-    "mongoose": "^4.4.4",
+    "mongoose": "^5.9.14",
     "morgan": "~1.6.1",
     "node-uuid": "^1.4.7",
     "qiniu": "^6.1.9",
